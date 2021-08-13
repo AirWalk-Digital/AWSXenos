@@ -1,0 +1,492 @@
+[{
+    "owner": "Cloudhealth",
+    "source": "https://github.com/mozilla/security/blob/master/operations/cloudformation-templates/cloudhealth_iam_role.json",
+    "description": "Cloudhealth",
+    "id": "454464851268"
+  }, {
+    "owner": "SegmentIO",
+    "source": ["https://segment.com/docs/destinations/amazon-s3/", "https://segment.com/docs/destinations/amazon-kinesis/"],
+    "description": "SegmentIO",
+    "id": "107630771604"
+  }, {
+    "owner": "SegmentIO",
+    "source": ["https://segment.com/docs/destinations/amazon-s3/", "https://segment.com/docs/destinations/amazon-kinesis/"],
+    "description": "SegmentIO",
+    "id": "595280932656"
+  }, {
+    "owner": "StackDriver",
+    "source": "https://web.archive.org/web/20150423044518/https://support.stackdriver.com/customer/portal/articles/1491790-setting-up-stackdriver-for-your-aws-account",
+    "description": "StackDriver",
+    "id": "314658760392"
+  }, {
+    "owner": "Zencoder",
+    "source": "https://support.brightcove.com/using-zencoder-s3",
+    "description": "The Performance Leader in File Cloud Encoding",
+    "id": "395540211253"
+  }, {
+    "owner": "Datadog",
+    "source": "https://docs.datadoghq.com/integrations/amazon_web_services/",
+    "description": "Datadog is a monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services, through a SaaS-based data analytics platform.",
+    "id": "464622532012"
+  }, {
+    "owner": "Cloudability",
+    "source": "https://github.com/edrans/tf-aws-iam-cloudability",
+    "description": "Cloudability is a cloud cost management platform that improves visibility, optimization, governance and more across cloud environments.",
+    "id": "165736516723"
+  }, {
+    "owner": "Rackspace",
+    "source": "https://manage.rackspace.com/aws/docs/product-guide/patching/ec2/meltdown.html",
+    "description": "Rackspace Inc. is an American managed cloud computing company based in Windcrest, Texas, a suburb of San Antonio.",
+    "id": "507897595701"
+  }, {
+    "owner": "New Relic",
+    "source": ["https://docs.newrelic.com/docs/integrations/amazon-integrations/get-started/connect-aws-services-infrastructure", "https://docs.newrelic.com/docs/infrastructure/new-relic-infrastructure/data-instrumentation/amazon-aws-ec2-integration-infrastructure"],
+    "description": "New Relic is an American software analytics company based in San Francisco, California.",
+    "id": "754728514883"
+  }, {
+    "owner": "New Relic",
+    "source": ["https://docs.newrelic.com/docs/integrations/amazon-integrations/get-started/connect-aws-services-infrastructure", "https://docs.newrelic.com/docs/infrastructure/new-relic-infrastructure/data-instrumentation/amazon-aws-ec2-integration-infrastructure"],
+    "description": "New Relic is an American software analytics company based in San Francisco, California.",
+    "id": "017663287629"
+  }, {
+    "owner": "Brightcove",
+    "source": "https://support.brightcove.com/using-dynamic-ingest-s3",
+    "description": "Brightcove, Inc. is a Boston, Massachusetts–based software company that produces an online video platform.",
+    "id": "749779118921"
+  }, {
+    "owner": "CloudCheckr",
+    "source": "https://support.cloudcheckr.com/cloudcheckr-api-userguide/cloudcheckr-admin-api-reference-guide/",
+    "description": "CloudCheckr's cloud management platform provides cost management, security, reporting and analytics to help users optimize their AWS and Azure environments.",
+    "id": "352813966189"
+  }, {
+    "owner": "SignifAI",
+    "source": "https://docs.signifai.io/docs/amazon-web-services",
+    "description": "Predict and prevent downtime with artificial intelligence and machine learning for Site Reliability Engineers.",
+    "id": "265975144233"
+  }, {
+    "owner": "ParkMyCloud",
+    "source": "https://parkmycloud.atlassian.net/wiki/spaces/PMCUG/pages/43876427/Create+an+IAM+Role+in+AWS+for+ParkMyCloud",
+    "description": "ParkMyCloud, a Turbonomic company, provides an easy-to-use platform that helps enterprises automatically identify and eliminate wasted cloud spend.",
+    "id": "753542375798"
+  }, {
+    "owner": "CenturyLinkCloud",
+    "source": "https://www.ctl.io/knowledge-base/cloud-application-manager/deploying-anywhere/using-your-aws-account/",
+    "description": "Centurylink Cloud offers secure enterprise cloud services ideal for business apps, IaaS, PaaS, SaaS, DBaaS and cloud management in a single platform.",
+    "id": "540339316802"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - US East (N. Virginia) - us-east-1",
+    "id": "127311923021"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - US East (Ohio) - us-east-2",
+    "id": "033677994240"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - US West (N. California) - us-west-1",
+    "id": "027434742980"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - US West (Oregon) - us-west-2",
+    "id": "797873946194"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - Canada (Central) - ca-central-1",
+    "id": "985666609251"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - EU (Frankfurt) - eu-central-1",
+    "id": "054676820928"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - EU (Ireland) - eu-west-1",
+    "id": "156460612806"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - EU (London) - eu-west-2",
+    "id": "652711504416"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - EU (Paris) - eu-west-3",
+    "id": "009996457667"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Tokyo) - ap-northeast-1",
+    "id": "582318560864"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Seoul) - ap-northeast-2",
+    "id": "600734575887"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Osaka-Local) - ap-northeast-3",
+    "id": "383597477331"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Singapore) - ap-southeast-1",
+    "id": "114774131450"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Sydney) - ap-southeast-2",
+    "id": "783225319266"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Mumbai) - ap-south-1",
+    "id": "718504428378"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - South America (São Paulo) - sa-east-1",
+    "id": "507241528517"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - AWS GovCloud (US-West) - us-gov-west-1",
+    "id": "048591011584"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - China (Beijing) - cn-north-1",
+    "id": "638102146993"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
+    "description": "Elastic Load Balancing (ELB) - China (Ningxia) - cn-northwest-1",
+    "id": "037604701340"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "193672423079"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "391106570357"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "262260360010"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "902366379725"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "865932855811"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "760740231472"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "361669875840"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "762762565011"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "404641285394"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "660998842044"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "907379612154"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "053454850223"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "210876761215"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "307160386991"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "915173422425"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
+    "description": "Redshift logs",
+    "id": "075028567923"
+  }, {
+    "owner": "Amazon Web Services",
+    "description": "Cloudfront logs",
+    "id": "cloudfront"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-getting-started.html#step-2",
+    "description": "Billing",
+    "id": "386209384616"
+  }, {
+    "owner": "Dome9",
+    "source": "http://support.dome9.com/knowledgebase/articles/796419-convert-dome9-aws-account-connection-from-iam-user",
+    "description": "Dome9 delivers full visibility, control and faster time to protection as organizations scale in AWS, Azure and Google Cloud environments.",
+    "id": "634729597623"
+  }, {
+    "owner": "Google",
+    "source": "https://support.stackdriver.com/customer/portal/articles/1491790-setting-up-stackdriver-for-your-aws-account",
+    "description": "Stackdriver aggregates metrics, logs, and events from infrastructure, giving developers and operators a rich set of observable signals that speed root-cause analysis and reduce mean time to resolution (MTTR).",
+    "id": "314658760392"
+  }, {
+    "owner": "Skeddly",
+    "source": "http://thecloudmarket.com/owner/478299826944",
+    "description": "Skeddly schedules and automates your cloud resources on Amazon Web Services, Microsoft Azure, and Google Cloud Platform.",
+    "id": "478299826944"
+  }, {
+    "owner": "Freshservice",
+    "source": "https://support.freshservice.com/support/solutions/articles/207515-creating-a-role-arn-for-integrating-amazon-web-services-aws-in-freshservice",
+    "description": "Cloud based ITSM software for your service desk",
+    "id": "618708667954"
+  }, {
+    "owner": "SignalFx",
+    "source": "https://signalfx-product-docs.readthedocs-hosted.com/en/latest/getting-started/send-data.html",
+    "description": "SignalFx is the only real-time cloud monitoring platform for infrastructure, microservices, and applications.",
+    "id": "134183635603"
+  }, {
+    "owner": "CloudSploit",
+    "source": "https://cloudsploit.freshdesk.com/support/solutions/articles/17000008755-connecting-an-aws-account-to-cloudsploit",
+    "description": "CloudSploit's open-source cloud security scans find misconfigurations and security risks, allowing for mitigation before a compromise.",
+    "id": "057012691312"
+  }, {
+    "owner": "Globus",
+    "source": "https://docs.globus.org/how-to/amazon-aws-s3-endpoints/",
+    "description": "Research data management simplified.",
+    "id": "328067584297"
+  }, {
+    "owner": "Dynatrace",
+    "source": "https://help.dynatrace.com/monitor-cloud-virtualization-and-hosts/cloud/how-do-i-start-amazon-web-services-monitoring/",
+    "description": "Dynatrace is a software intelligence company providing application performance management, artificial intelligence for operations, cloud infrastructure monitoring, and digital experience management, with products for the information technology departments and digital business owners of medium and large businesses.",
+    "id": "509560245411"
+  }, {
+    "owner": "Deep Security",
+    "source": "https://esupport.trendmicro.com/media/13166096/Generate-AWS-Role.pdf",
+    "description": "Trend Micro's Deep Security is an intelligent data protection solution that services all environments and was built purposefully to support VMware deployments.",
+    "id": "862820443276"
+  }, {
+    "owner": "Cloudbreak",
+    "source": "https://github.com/hortonworks/cloudbreak",
+    "description": "A tool for provisioning and managing Apache Hadoop clusters in the cloud.",
+    "id": "755047402263"
+  }, {
+    "owner": "Teraproc",
+    "source": "http://www.teraproc.com/awskey/",
+    "description": "Teraproc Cloud Manager is a complete solution of managing a heterogeneous cloud computing environment.",
+    "id": "122931797421"
+  }, {
+    "owner": "Orbitera",
+    "source": "https://support.orbitera.com/support/solutions/articles/147040-add-new-aws-accounts",
+    "description": "The Cloud Commerce Platform",
+    "id": "328676173091"
+  }, {
+    "owner": "RedLine13",
+    "source": "https://www.redline13.com/blog/aws-setup/",
+    "description": "Open Architecture for Building and Running Load Tests",
+    "id": "635144173025"
+  }, {
+    "owner": "Kochava",
+    "source": "https://support.kochava.com/reference-information/traffic-import-tool",
+    "description": "Kochava is the industry leader for mobile app attribution and mobile app analytics. ",
+    "id": "719465667078"
+  }, {
+    "owner": "Instaclustr",
+    "source": "https://support.instaclustr.com/hc/en-us/articles/226565607-Setting-Up-a-Datacenter-with-EBS-Encryption",
+    "description": "Managed and supported open source solutions for Apache Cassandra, Apache Kafka, Apache Spark, Elasticsearch, Apache Zeppelin, Kibana etc",
+    "id": "624537489435"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "475085895292"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "086441151436"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "388731089494"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "113285607260"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "819402241893"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "977081816279"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "765225791966"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "492519147666"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "903692715234"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "284668455005"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "216624486486"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "681348832753"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "035351147821"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "859597730677"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "282025262664"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "262312530599"
+  }, {
+    "owner": "CloudTrail",
+    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
+    "description": "CloudTrail",
+    "id": "814480443879"
+  }, {
+    "owner": "Summit Route",
+    "source": "https://summitroute.com/aws_security_assessments/",
+    "description": "Summit Route",
+    "id": "393727464233"
+  }, {
+    "owner": "TrendMicro",
+    "source": "https://help.deepsecurity.trendmicro.com/Add-Computers/add-aws.html",
+    "description": "TrendMicro",
+    "id": "147995105371"
+  }, {
+    "owner": "Convox",
+    "source": "https://convox.com/docs/aws-integration",
+    "description": "Convox",
+    "id": "665986001363"
+  }, {
+    "owner": "Spotinst",
+    "source": "https://help.spotinst.com/hc/en-us/articles/360000343509-Functions-Permissions-Model-IAM-Role-",
+    "description": "Spotinst",
+    "id": "922761411349"
+  }, {
+    "owner": "Redlock",
+    "source": "https://docs.paloaltonetworks.com/redlock/redlock-admin/connect-your-cloud-platform-to-redlock/onboard-your-aws-account/set-up-your-aws-account.html",
+    "description": "Redlock",
+    "id": "188619942792"
+  }, {
+    "owner": "Sumo Logic",
+    "source": "https://help.sumologic.com/03Send-Data/sources/02sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product#IAM_Role",
+    "description": "Account belonging to Sumo Logic used for ingestion of logs from customers' AWS accounts",
+    "id": "926226587429"
+  }, {
+    "owner": "Bridgecrew",
+    "description": "Bridgecrew",
+    "id": "890234264427"
+  }, {
+    "owner": "Lacework",
+    "description": "Lacework",
+    "id": "434813966438"
+  }, {
+    "owner": "Onelogin",
+    "description": "Onelogin",
+    "id": "842984801698"
+  }, {
+    "owner": "nOps",
+    "source": "https://help.nops.io/manual_setup",
+    "description": "nOps",
+    "id": "202279780353"
+  }, {
+    "owner": "Fivetran",
+    "source": "https://fivetran.com/docs/logs/cloudwatch/setup-guide",
+    "description": "Fivetran",
+    "id": "834469178297"
+  }, {
+    "owner": "Databricks",
+    "source": "https://docs.databricks.com/administration-guide/account-settings/aws-accounts.html",
+    "description": "Databricks",
+    "id": "414351767826"
+  }, {
+    "owner": "Threat Stack",
+    "source": "https://threatstack.zendesk.com/hc/en-us/articles/206006626-AWS-EC2-Integration",
+    "description": "Threat Stack",
+    "id": "896126563706"
+  }, {
+    "owner": "JupiterOne",
+    "source": "https://github.com/JupiterOne/jupiterone-aws-cloudformation/commit/0adf947dc98404cef1eee1f570f39c05c87d3f41",
+    "description": "JupiterOne",
+    "id": "612791702201"
+  }, {
+    "owner": "Rapid7",
+    "source": "https://insightvm.help.rapid7.com/docs/aws-connect-to-cloud-configuration-assessment",
+    "description": "Rapid7 InsightVM Cloud Configuration",
+    "id": "336818582268"
+  }]
