@@ -1,33 +1,29 @@
 <!doctype html>
 <html>
   <head>
-    <title>{{ title }}</title>
+    <title>AWSXenos Report</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  </head>
+  </headi>
   <body>
     <div class="container">
-      <h1>{{ title }}</h1>
+      <h1>AWSXenos Report</h1>
       <hr>
       <table id="data" class="table table-striped">
         <thead>
           <tr>
-            <th>RoleName</th>
-            <th>External ARN</th>
             <th>Account Type</th>
+            <th>Role</th>
           </tr>
         </thead>
         <tbody>
-          {% for user in summary %}
+          {% for account, role in summary.items() %}
             <tr>
-              <td>{{ user.age }}</td>
-              <td>{{ user.address }}</td>
-              <td>{{ user.phone }}</td>
-              <td>{{ user.email }}</td>
+              <td>{{ account }}</td>
+              <td>{{ role }}</td>
             </tr>
           {% endfor %}
         </tbody>
-      </table>
-    
+      </table>  
     </div>
     {% block scripts %}{% endblock %}
   </body>

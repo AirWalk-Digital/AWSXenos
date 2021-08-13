@@ -2,8 +2,10 @@
 
 import argparse
 from collections import defaultdict
+from os import write
 from typing import Any, Optional, Dict, List, DefaultDict, Set
 import json
+import sys
 
 from finding import Finding
 from report import Report
@@ -12,13 +14,13 @@ import boto3  # type: ignore
 from policyuniverse.arn import ARN  # type: ignore
 from policyuniverse.policy import Policy  # type: ignore
 
-class Scan:
 
+class Scan:
     def __init__(self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True) -> None:
-        self.roles = self._get_roles(exclude_service, exclude_aws) 
+        self.roles = self._get_roles(exclude_service, exclude_aws)
         self.accounts = self.get_all_accounts()
         self.findings = self.populate_findings(self.accounts, self.roles)
-      
+
     def get_org_accountids(self) -> Set:
         """Get Account Ids from the AWS Organization
 
@@ -39,8 +41,8 @@ class Scan:
             print(e)
         return accounts
 
-    def _get_roles(self,
-        exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True
+    def _get_roles(
+        self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True
     ) -> DefaultDict[str, str]:
         """Get a list of roles from the AWS Account
 
@@ -81,9 +83,8 @@ class Scan:
 
         return accounts
 
-
-    def populate_findings(self,
-        accounts: DefaultDict[str, Set], roles: DefaultDict[str, str]
+    def populate_findings(
+        self, accounts: DefaultDict[str, Set], roles: DefaultDict[str, str]
     ) -> DefaultDict[str, Finding]:
         """Combine all accounts with all the roles to get findings
 
@@ -121,27 +122,47 @@ class Scan:
                         findings[role] = Finding(unknown_accounts=[principal.arn])
         return findings
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Scan an AWS Accounts for external trusts")
-    parser.add_argument('--reporttype', dest="reporttype", default='all', help='Type of report to generate. JSON or HTML')
-    parser.add_argument('--include_service_roles', dest="service_roles", default=False, help="Include service roles in the report")
-    parser.add_argument('--include_aws_service_roles', dest="aws_service_role", default=False, help="Include AWS roles in the report")
 
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Scan an AWS Account for external trusts")
+
+    parser.add_argument(
+        "--reporttype", dest="reporttype", action="store", default="all", help="Type of report to generate. JSON or HTML"
+    )
+    parser.add_argument(
+        "--include_service_roles",
+        dest="service_roles",
+        action="store_false",
+        default=False,
+        help="Include service roles in the report",
+    )
+    parser.add_argument(
+        "--include_aws_service_roles",
+        dest="aws_service_roles",
+        action="store_false",
+        default=False,
+        help="Include AWS roles in the report",
+    )
+    parser.add_argument(
+        "-w", "--write-output", dest="write_output", action="store", default=False, help="Path to write output"
+    )
     args = parser.parse_args()
     reporttype = args.reporttype
     service_roles = args.service_roles
     aws_service_roles = args.aws_service_roles
+    write_output = args.write_output
 
     s = Scan(service_roles, aws_service_roles)
-    r = Report()
+    r = Report(s.findings)
     if reporttype.lower() == "json":
-        summary = r.JSONReport(s.findings)
+        summary = r.JSONReport()
     elif reporttype.lower() == "html":
-        summary = r.HTMLReport(s.findings)
+        summary = r.HTMLReport()
     else:
-        summary = r.JSONReport(s.findings)
+        summary = r.JSONReport()
 
-    for account_type, finding in summary.items():
-        print(f"[!] - {account_type}")
-        print(f"\t- {finding}")
+    if write_output:
+        with open(f"{write_output}", "w") as f:
+            f.write(summary)
 
+    sys.stdout.write(summary)

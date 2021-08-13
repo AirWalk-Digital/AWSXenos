@@ -23,7 +23,7 @@ The list goes on, however:
 
 ```sh
 pip install AWSXenos
-AWSXenos --json --html
+AWSXenos --reporttype HTML -w report.html
 ```
 You will get a JSON output and an HTML report.
 See example report here
@@ -55,7 +55,9 @@ pip install -r requirements.txt
 ./scan.py
 ```
 
+## Features
+- [ ] Import as library/package
+- [x] HTML and JSON Report 
+
 ## TODO
-- [ ] Run as lambda
-- [ ] HTML Report
-- [ ] Return JSON
+- [ ] Add AWS Services to showcase(http://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Breaking-The-Isolation-Cross-Account-AWS-Vulnerabilities.pdf)
