@@ -1,10 +1,13 @@
 # AWS External Account Scanner
 
+> Xenos, is Greek for stranger.
+
 Discover all the external trusts in your AWS and categorise them based on known and unknown entities.
 AWSXenos will list all the roles in an AWS accounts and give you a list of all the unknown accounts that have trust relationships to your account.
 
 For the "known" accounts list AWSXenos uses https://github.com/rupertbg/aws-public-account-ids and will try to get a list of all the AWS accounts in your AWS organization.
-For the Org accounts list
+For the Org accounts list AWSXenos query AWS Organizations
+
 
 ## Why
 

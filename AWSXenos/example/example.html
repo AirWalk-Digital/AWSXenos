@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>AWSXenos Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  </headi>
+  <body>
+    <div class="container">
+      <h1>AWSXenos Report</h1>
+      <hr>
+      <table id="data" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Account Type</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td>org_accounts</td>
+              <td>["AWS-QuickSetup-StackSet-Local-ExecutionRole - ['arn:aws:iam::123456789012:role/AWS-QuickSetup-StackSet-Local-AdministrationRole']", "AWSCloudFormationStackSetExecutionRole - ['arn:aws:iam::567890123456:root']", "AWSReservedSSO_AdministratorAccess_cecded1e554404ff - ['arn:aws:iam::123456789012:saml-provider/AWSSSO_xxxxxxxx_DO_NOT_DELETE']", "AWSReservedSSO_ViewOnlyAccess_xxxxxxxx - ['arn:aws:iam::123456789012:saml-provider/AWSSSO_794e3392e776aacc_DO_NOT_DELETE']", "AWS_IAM_AAD_UpdateTask_CrossAccountRole - ['arn:aws:iam::567890123456:root']", "Azure-AD-Admin-Role - ['arn:aws:iam::123456789012:saml-provider/AirWalkAzureAD']", "Azure-AD-DBA-Role - ['arn:aws:iam::123456789012:saml-provider/AirWalkAzureAD']", "Azure-AD-PowerUser-Role - ['arn:aws:iam::123456789012:saml-provider/AirWalkAzureAD']", "Azure-AD-Read-Only-Role - ['arn:aws:iam::123456789012:saml-provider/AirWalkAzureAD']", "ccf_security_compliance - ['arn:aws:iam::890123456789:root']", "DELETEMECCF - ['arn:aws:iam::123456789012:root']", "OrganizationAccountAccessRole - ['arn:aws:iam::567890123456:root']", "PAM-Automation - ['arn:aws:iam::123456789012:user/Template_Manager']", "stacksets-exec-9b8edb5f36a9f73cbd4c03a48513f411 - ['arn:aws:iam::567890123456:role/aws-service-role/stacksets.cloudformation.amazonaws.com/AWSServiceRoleForCloudFormationStackSetsOrgAdmin']", "ToBeAssumed - ['arn:aws:iam::123456789012:role/aws-reserved/sso.amazonaws.com/eu-west-1/AWSReservedSSO_AdministratorAccess_xxxxxxxxx']"]</td>
+            </tr>
+          
+            <tr>
+              <td>unknown_accounts</td>
+              <td>["AWSServiceRoleForCloudFormationStackSetsOrgMember - ['member.org.stacksets.cloudformation.amazonaws.com']"]</td>
+            </tr>
+          
+            <tr>
+              <td>external_accounts</td>
+              <td>["JupiterOne - ['arn:aws:iam::612791702201:root']"]</td>
+            </tr>
+          
+        </tbody>
+      </table>  
+    </div>
+    
+  </body>
+</html>
