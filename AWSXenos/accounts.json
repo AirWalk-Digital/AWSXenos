@@ -63,10 +63,23 @@
     "source": "https://docs.signifai.io/docs/amazon-web-services",
     "description": "Predict and prevent downtime with artificial intelligence and machine learning for Site Reliability Engineers.",
     "id": "265975144233"
-  }, {
+  },
+  {
+    "owner": "AlertLogic US",
+    "source":"https://docs.alertlogic.com/prepare/iam-role-creation.htm", 
+     "description": "Alert Logic: Managed Detection and Response (MDR) Company",
+    "id": "733251395267"
+  }, 
+  {
+    "owner": "AlertLogic EU",
+    "source":"https://docs.alertlogic.com/prepare/iam-role-creation.htm", 
+     "description": "Alert Logic: Managed Detection and Response (MDR) Company",
+    "id": "857795874556"
+  }, 
+  {
     "owner": "ParkMyCloud",
     "source": "https://parkmycloud.atlassian.net/wiki/spaces/PMCUG/pages/43876427/Create+an+IAM+Role+in+AWS+for+ParkMyCloud",
-    "description": "ParkMyCloud, a Turbonomic company, provides an easy-to-use platform that helps enterprises automatically identify and eliminate wasted cloud spend.",
+     "description": "ParkMyCloud, a Turbonomic company, provides an easy-to-use platform that helps enterprises automatically identify and eliminate wasted cloud spend.",
     "id": "753542375798"
   }, {
     "owner": "CenturyLinkCloud",
