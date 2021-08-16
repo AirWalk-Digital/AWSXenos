@@ -2,16 +2,20 @@
 
 > Xenos, is Greek for stranger.
 
-Discover all the external trusts in your AWS and categorise them based on known and unknown entities.
-AWSXenos will list all the roles in an AWS accounts and give you a list of all the unknown accounts that have trust relationships to your account.
+AWSXenos will list all the trust relationships in all the roles in an AWS account and give you a breakdown of all the accounts that have trust relationships to your account.
 
-For the "known" accounts list AWSXenos uses https://github.com/rupertbg/aws-public-account-ids and will try to get a list of all the AWS accounts in your AWS organization.
-For the Org accounts list AWSXenos query AWS Organizations
+This tool reports against the [Trusted Relationship Technique](https://attack.mitre.org/techniques/T1199/) of the ATT&CK Framework. 
 
+* For the "known" accounts list AWSXenos uses https://github.com/rupertbg/aws-public-account-ids.
+* For the Org accounts list AWSXenos query AWS Organizations.
+* AWS Services are classified separately.
+* Everything else falls under unknown account
 
 ## Why
 
-This tool reports against the [Trusted Relationship Technique](https://attack.mitre.org/techniques/T1199/) of the ATT&CK Framework. 
+Access Analyzer falls short because
+A. You need to enable it in every region
+B. Identified external entities might be known entities. E.g. a trusted third party vendor. 
 
 Tools like [ScoutSuite](https://github.com/nccgroup/ScoutSuite/blob/db827e3d8e36e3bc7adcb8c62f2453960353c2ef/ScoutSuite/providers/aws/rules/findings/iam-assume-role-lacks-external-id-and-mfa.json) can uncover the external trusts that don't have MFA.
 [Dome9](https://gsl.dome9.com/D9.AWS.IAM.61.html) can discover if there are conditions, associated.
@@ -57,10 +61,15 @@ source /env/bin/activate
 pip install -r requirements.txt
 ./scan.py
 ```
+## I want to add more known accounts
+Create a PR
 
 ## Features
 - [ ] Import as library/package
 - [x] HTML and JSON Report 
+- [x] Support AWS Services. [See Wiz's AWSConfig, et al vulnverabilities](http://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Breaking-The-Isolation-Cross-Account-AWS-Vulnerabilities.pdf)
 
 ## TODO
-- [ ] Add AWS Services to showcase(http://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Breaking-The-Isolation-Cross-Account-AWS-Vulnerabilities.pdf)
+- [ ] Add support for resource policies services, e.g. SNS, SQS, S3, Lambda
+- [ ] Add support for Cognito, RAM
+- [ ] Add support for VPCE

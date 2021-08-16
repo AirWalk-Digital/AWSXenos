@@ -17,24 +17,25 @@ from policyuniverse.policy import Policy  # type: ignore
 
 class Scan:
     def __init__(self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True) -> None:
+        self.known_accounts_data = defaultdict(dict)
         self.roles = self._get_roles(exclude_service, exclude_aws)
         self.accounts = self.get_all_accounts()
         self.findings = self.populate_findings(self.accounts, self.roles)
 
-    def get_org_accountids(self) -> Set:
+    def get_org_accounts(self) -> DefaultDict[str, dict]:
         """Get Account Ids from the AWS Organization
 
         Returns:
-            Set: A Set of Account Ids
+            DefaultDict: Key of Account Ids. Value of other Information
         """
-        accounts = set()
+        accounts = defaultdict(dict)
         orgs = boto3.client("organizations")
         paginator = orgs.get_paginator("list_accounts")
         try:
             account_iterator = paginator.paginate()
             for account_resp in account_iterator:
                 for account in account_resp["Accounts"]:
-                    accounts.add(account["Id"])
+                    accounts[account["Id"]] = account
             return accounts
         except Exception as e:
             print("[!] - Failed to get organization accounts")
@@ -64,7 +65,7 @@ class Scan:
                 elif role["Path"].startswith("/aws-service-role/") and exclude_aws:
                     continue
                 else:
-                    roles[role["RoleName"]] = role["AssumeRolePolicyDocument"]
+                    roles[role["Arn"]] = role["AssumeRolePolicyDocument"]
 
         return roles
 
@@ -76,10 +77,18 @@ class Scan:
         """
         accounts = defaultdict(set)
         with open("accounts.json", "r") as f:
-            known_accounts = json.load(f)
-            for known_account in known_accounts:
-                accounts["known_accounts"].add(known_account["id"])
-        accounts["org_accounts"] = self.get_org_accountids()
+            accounts_file = json.load(f)
+            for account in accounts_file:
+                self.known_accounts_data[account["id"]] = account
+
+        accounts["known_accounts"] = set(self.known_accounts_data.keys())
+
+        # Populate Org accounts
+        org_accounts = self.get_org_accounts()
+
+        self.known_accounts_data = self.known_accounts_data | org_accounts
+
+        accounts["org_accounts"] = set(org_accounts.keys())
 
         return accounts
 
@@ -100,10 +109,14 @@ class Scan:
             trust_policy = Policy(assume_policy)
             for unparsed_principal in trust_policy.principals:
                 principal = ARN(unparsed_principal)  # type: Any
+                # Check if Principal is an AWS Service
                 if principal.service:
-                    continue
+                    if role in findings:
+                        findings[role].aws_services.append(principal.arn)
+                    else:
+                        findings[role] = Finding(aws_services=[principal.arn])
                 # Check against org_accounts
-                if principal.account_number in accounts["org_accounts"]:
+                elif principal.account_number in accounts["org_accounts"]:
                     if role in findings:
                         findings[role].org_accounts.append(principal.arn)
                     else:
@@ -111,9 +124,9 @@ class Scan:
                 # Check against known external accounts
                 elif principal.account_number in accounts["known_accounts"]:
                     if role in findings:
-                        findings[role].external_accounts.append(principal.arn)
+                        findings[role].known_accounts.append(principal.arn)
                     else:
-                        findings[role] = Finding(external_accounts=[principal.arn])
+                        findings[role] = Finding(known_accounts=[principal.arn])
                 # Unknown Account
                 else:
                     if role in findings:
@@ -153,7 +166,7 @@ if __name__ == "__main__":
     write_output = args.write_output
 
     s = Scan(service_roles, aws_service_roles)
-    r = Report(s.findings)
+    r = Report(s.findings, s.known_accounts_data)
     if reporttype.lower() == "json":
         summary = r.JSONReport()
     elif reporttype.lower() == "html":
