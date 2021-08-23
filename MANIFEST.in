@@ -1,1 +1,1 @@
-include requirements.txt awsxenos/py.typed awsxenos/accounts.json
+include requirements.txt awsxenos/py.typed awsxenos/accounts.json awsxenos/template.html
