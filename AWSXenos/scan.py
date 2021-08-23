@@ -2,13 +2,15 @@
 
 import argparse
 from collections import defaultdict
+from pathlib import Path
 from os import write
 from typing import Any, Optional, Dict, List, DefaultDict, Set
 import json
 import sys
 
-from finding import Finding
-from report import Report
+from awsxenos.finding import Finding
+from awsxenos.report import Report
+from awsxenos import package_path
 
 import boto3  # type: ignore
 from policyuniverse.arn import ARN  # type: ignore
@@ -16,19 +18,21 @@ from policyuniverse.policy import Policy  # type: ignore
 
 
 class Scan:
-    def __init__(self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True) -> None:
-        self.known_accounts_data = defaultdict(dict)
+    def __init__(
+        self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True
+    ) -> None:
+        self.known_accounts_data = defaultdict(dict)  # type: DefaultDict[str, Dict[Any, Any]]
         self.roles = self._get_roles(exclude_service, exclude_aws)
         self.accounts = self.get_all_accounts()
-        self.findings = self.populate_findings(self.accounts, self.roles)
+        self.findings = self.collate_findings(self.accounts, self.roles)
 
-    def get_org_accounts(self) -> DefaultDict[str, dict]:
+    def get_org_accounts(self) -> DefaultDict[str, Dict]:
         """Get Account Ids from the AWS Organization
 
         Returns:
             DefaultDict: Key of Account Ids. Value of other Information
         """
-        accounts = defaultdict(dict)
+        accounts = defaultdict(dict) # type: DefaultDict[str, Dict]
         orgs = boto3.client("organizations")
         paginator = orgs.get_paginator("list_accounts")
         try:
@@ -75,8 +79,9 @@ class Scan:
         Returns:
             DefaultDict[str, Set]: Key of account type. Value account ids
         """
-        accounts = defaultdict(set)
-        with open("accounts.json", "r") as f:
+        accounts = defaultdict(set) # type: DefaultDict[str, Set]
+        
+        with open(f"{package_path.resolve().parent}/accounts.json", "r") as f:
             accounts_file = json.load(f)
             for account in accounts_file:
                 self.known_accounts_data[account["id"]] = account
@@ -86,13 +91,13 @@ class Scan:
         # Populate Org accounts
         org_accounts = self.get_org_accounts()
 
-        self.known_accounts_data = self.known_accounts_data | org_accounts
+        self.known_accounts_data = self.known_accounts_data | org_accounts # type: ignore
 
         accounts["org_accounts"] = set(org_accounts.keys())
 
         return accounts
 
-    def populate_findings(
+    def collate_findings(
         self, accounts: DefaultDict[str, Set], roles: DefaultDict[str, str]
     ) -> DefaultDict[str, Finding]:
         """Combine all accounts with all the roles to get findings
@@ -136,11 +141,17 @@ class Scan:
         return findings
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Scan an AWS Account for external trusts")
+def cli():
+    parser = argparse.ArgumentParser(
+        description="Scan an AWS Account for external trusts"
+    )
 
     parser.add_argument(
-        "--reporttype", dest="reporttype", action="store", default="all", help="Type of report to generate. JSON or HTML"
+        "--reporttype",
+        dest="reporttype",
+        action="store",
+        default="all",
+        help="Type of report to generate. JSON or HTML",
     )
     parser.add_argument(
         "--include_service_roles",
@@ -157,7 +168,12 @@ if __name__ == "__main__":
         help="Include AWS roles in the report",
     )
     parser.add_argument(
-        "-w", "--write-output", dest="write_output", action="store", default=False, help="Path to write output"
+        "-w",
+        "--write-output",
+        dest="write_output",
+        action="store",
+        default=False,
+        help="Path to write output",
     )
     args = parser.parse_args()
     reporttype = args.reporttype
@@ -168,14 +184,17 @@ if __name__ == "__main__":
     s = Scan(service_roles, aws_service_roles)
     r = Report(s.findings, s.known_accounts_data)
     if reporttype.lower() == "json":
-        summary = r.JSONReport()
+        summary = r.JSON_report()
     elif reporttype.lower() == "html":
-        summary = r.HTMLReport()
+        summary = r.HTML_report()
     else:
-        summary = r.JSONReport()
+        summary = r.JSON_report()
 
     if write_output:
         with open(f"{write_output}", "w") as f:
             f.write(summary)
 
     sys.stdout.write(summary)
+
+if __name__ == "__main__":
+    cli()

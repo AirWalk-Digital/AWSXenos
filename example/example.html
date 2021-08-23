@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>AWSXenos Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    </headi>
+
+<body>
+    <div class="container">
+        <h1>AWSXenos Report</h1>
+        <hr>
+        <table id="data" class="table table-striped">
+            <thead class="table-light">
+                <tr>
+                    <th>Account Type</th>
+                    <th>Finding</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>aws_services</td>
+
+                    <td>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> role </th>
+                                    <th scope="col"> principal </th>
+                                    <th scope="col"> Account Owner </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                           
+                                                             
+                                <tr>
+                                    <td>arn:aws:iam::123456789012:role/aws-elasticbeanstalk-ec2-role</td>
+                                    <td>['ec2.amazonaws.com']</td>
+                                    
+                                    <td> - 
+                                        </td>
+                                    
+                                    
+                                <tr>
+                                    <td>arn:aws:iam::123456789012:role/service-role/AWSCodePipelineServiceRole-eu-west-1-test</td>
+                                    <td>['codepipeline.amazonaws.com']</td>
+                                    
+                                    <td> - 
+                                        </td>
+
+                                    
+                                <tr>
+                                    <td>arn:aws:iam::123456789012:role/Test-VPCFlowLogs</td>
+                                    <td>['vpc-flow-logs.amazonaws.com']</td>
+                                    
+                                    <td> - 
+                                        </td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>org_accounts</td>
+
+                    <td>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> role </th>
+                                    <th scope="col"> principal </th>
+                                    <th scope="col"> Account Owner </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    
+                                <tr>
+                                    <td>arn:aws:iam::123456789012:role/AWSCloudFormationStackSetExecutionRole</td>
+                                    <td>['arn:aws:iam::678901234567:root']</td>
+                                    
+                                    <td>AirWalk Management Account - INVITED
+                                        ACTIVE</td>
+                                    
+                                    
+                                <tr>
+                                    <td>arn:aws:iam::123456789012:role/aws-reserved/sso.amazonaws.com/eu-west-1/AWSReservedSSO_AdministratorAccess_xxxxxxxxx</td>
+                                    <td>['arn:aws:iam::123456789012:saml-provider/AWSSSO_xxxxxxxxx_DO_NOT_DELETE']</td>
+                                    
+                                    <td>AirWalk Sandbox  - CREATED
+                                        ACTIVE</td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>unknown_accounts</td>
+
+                    <td>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> role </th>
+                                    <th scope="col"> principal </th>
+                                    <th scope="col"> Account Owner </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>                 
+                                    <td>arn:aws:iam::123456789012:role/TotallyLegitRole</td>
+                                    <td>['arn:aws:iam:666666666666:root']</td>
+                                    
+                                    <td> - 
+                                        </td>
+                                    
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>known_accounts</td>
+
+                    <td>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> role </th>
+                                    <th scope="col"> principal </th>
+                                    <th scope="col"> Account Owner </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td>arn:aws:iam::123456789012:role/JupiterOne</td>
+                                    <td>arn:aws:iam::612791702201:root</td>
+                                    
+                                    <td>JupiterOne - https://github.com/JupiterOne/jupiterone-aws-cloudformation/commit/0adf947dc98404cef1eee1f570f39c05c87d3f41</td>
+                                     
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+
+</html>
