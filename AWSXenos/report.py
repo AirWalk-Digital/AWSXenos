@@ -2,17 +2,15 @@ from collections import defaultdict
 from typing import List, Dict, DefaultDict
 import json
 
-from awsxenos.finding import Finding
-from awsxenos import package_path 
-
 from jinja2 import Environment, FileSystemLoader  # type: ignore
 from policyuniverse.arn import ARN  # type: ignore
 
+from awsxenos.finding import Finding
+from awsxenos import package_path
+
 
 class Report:
-    def __init__(
-        self, findings: defaultdict[str, Finding], account_info: DefaultDict[str, Dict]
-    ) -> None:
+    def __init__(self, findings: defaultdict[str, Finding], account_info: DefaultDict[str, Dict]) -> None:
         self.summary = self._summarise(findings, account_info)
 
     def _summarise(

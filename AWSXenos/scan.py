@@ -8,19 +8,17 @@ from typing import Any, Optional, Dict, List, DefaultDict, Set
 import json
 import sys
 
-from awsxenos.finding import Finding
-from awsxenos.report import Report
-from awsxenos import package_path
-
 import boto3  # type: ignore
 from policyuniverse.arn import ARN  # type: ignore
 from policyuniverse.policy import Policy  # type: ignore
 
+from awsxenos.finding import Finding
+from awsxenos.report import Report
+from awsxenos import package_path
+
 
 class Scan:
-    def __init__(
-        self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True
-    ) -> None:
+    def __init__(self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True) -> None:
         self.known_accounts_data = defaultdict(dict)  # type: DefaultDict[str, Dict[Any, Any]]
         self.roles = self._get_roles(exclude_service, exclude_aws)
         self.accounts = self.get_all_accounts()
@@ -32,7 +30,7 @@ class Scan:
         Returns:
             DefaultDict: Key of Account Ids. Value of other Information
         """
-        accounts = defaultdict(dict) # type: DefaultDict[str, Dict]
+        accounts = defaultdict(dict)  # type: DefaultDict[str, Dict]
         orgs = boto3.client("organizations")
         paginator = orgs.get_paginator("list_accounts")
         try:
@@ -79,8 +77,8 @@ class Scan:
         Returns:
             DefaultDict[str, Set]: Key of account type. Value account ids
         """
-        accounts = defaultdict(set) # type: DefaultDict[str, Set]
-        
+        accounts = defaultdict(set)  # type: DefaultDict[str, Set]
+
         with open(f"{package_path.resolve().parent}/accounts.json", "r") as f:
             accounts_file = json.load(f)
             for account in accounts_file:
@@ -91,7 +89,7 @@ class Scan:
         # Populate Org accounts
         org_accounts = self.get_org_accounts()
 
-        self.known_accounts_data = self.known_accounts_data | org_accounts # type: ignore
+        self.known_accounts_data = self.known_accounts_data | org_accounts  # type: ignore
 
         accounts["org_accounts"] = set(org_accounts.keys())
 
@@ -142,9 +140,7 @@ class Scan:
 
 
 def cli():
-    parser = argparse.ArgumentParser(
-        description="Scan an AWS Account for external trusts"
-    )
+    parser = argparse.ArgumentParser(description="Scan an AWS Account for external trusts")
 
     parser.add_argument(
         "--reporttype",
@@ -195,6 +191,7 @@ def cli():
             f.write(summary)
 
     sys.stdout.write(summary)
+
 
 if __name__ == "__main__":
     cli()
