@@ -10,11 +10,11 @@ from awsxenos import package_path
 
 
 class Report:
-    def __init__(self, findings: defaultdict[str, Finding], account_info: DefaultDict[str, Dict]) -> None:
+    def __init__(self, findings: DefaultDict[str, Finding], account_info: DefaultDict[str, Dict]) -> None:
         self.summary = self._summarise(findings, account_info)
 
     def _summarise(
-        self, findings: defaultdict[str, Finding], account_info: DefaultDict[str, Dict]
+        self, findings: DefaultDict[str, Finding], account_info: DefaultDict[str, Dict]
     ) -> DefaultDict[str, List]:
         summary = defaultdict(list)
         for role, finding in findings.items():
