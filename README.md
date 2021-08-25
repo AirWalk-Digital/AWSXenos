@@ -18,9 +18,12 @@ This tool reports against the [Trusted Relationship Technique](https://attack.mi
 
 Access Analyzer falls short because:
 
-A. You need to enable it in every region.
-B. Identified external entities might be known entities. E.g. a trusted third party vendor or a vendor you no longer trust. 
-C. Zone of trust is a fixed set of the AWS organisation.
+A. You need to enable it in every region. 
+
+B. Identified external entities might be known entities. E.g. a trusted third party vendor or a vendor you no longer trust. An Account number is seldom useful. 
+
+C. Zone of trust is a fixed set of the AWS organisation. You won’t know if a trust between sandbox->prod has been established. 
+
 D. Does not identify AWS Service principals. This is mainly important because of [Wiz's AWSConfig, et al vulnverabilities](http://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Breaking-The-Isolation-Cross-Account-AWS-Vulnerabilities.pdf)
 
 
