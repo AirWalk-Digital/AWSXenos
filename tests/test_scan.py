@@ -17,7 +17,7 @@ class ScanTests(unittest.TestCase):
         self.assertEqual(type(s.findings), collections.defaultdict)
         print(s.findings)
         for role in s.findings.keys():
-            self.assertIn("arn:aws:iam::000000000000:role/", role)
+            self.assertIn("arn:aws:", role)
         self.assertGreaterEqual(
             len(
                 s.findings[

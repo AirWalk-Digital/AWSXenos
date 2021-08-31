@@ -2,7 +2,7 @@
 
 > Xenos, is Greek for stranger.
 
-AWSXenos will list all the trust relationships in all the IAM roles in an AWS account and give you a breakdown of all the accounts that have trust relationships to your account.
+AWSXenos will list all the trust relationships in all the IAM roles, and S3 buckets, in an AWS account and give you a breakdown of all the accounts that have trust relationships to your account.
 
 This tool reports against the [Trusted Relationship Technique](https://attack.mitre.org/techniques/T1199/) of the ATT&CK Framework. 
 
@@ -89,10 +89,12 @@ pip install -r requirements.txt
 Create a PR or raise an issue
 
 ## Features
+- [x] IAM Roles
+- [x] S3 Bucket Policies and ACLs
 - [x] Use as library
 - [x] HTML and JSON output 
 - [x] Supports AWS Services 
 ## TODO
-- [ ] Add support for resource policies services, e.g. SNS, SQS, S3, Lambda
+- [ ] Add support for more resource policies services, e.g. SNS, SQS, Lambda
 - [ ] Add support for Cognito, RAM
 - [ ] Add support for VPCE

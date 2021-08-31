@@ -2,11 +2,12 @@
 
 import argparse
 from collections import defaultdict
-from typing import Any, Optional, Dict, DefaultDict, Set
+from typing import Any, Optional, Dict, List, DefaultDict, Set
 import json
 import sys
 
 import boto3  # type: ignore
+from botocore.exceptions import ClientError  # type: ignore
 from policyuniverse.arn import ARN  # type: ignore
 from policyuniverse.policy import Policy  # type: ignore
 
@@ -18,9 +19,16 @@ from awsxenos import package_path
 class Scan:
     def __init__(self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True) -> None:
         self.known_accounts_data = defaultdict(dict)  # type: DefaultDict[str, Dict[Any, Any]]
+        self._buckets = self.list_account_buckets()
         self.roles = self._get_roles(exclude_service, exclude_aws)
         self.accounts = self.get_all_accounts()
-        self.findings = self.collate_findings(self.accounts, self.roles)
+        self.bucket_policies = self._get_bucket_policies()
+        self.bucket_acls = self._get_bucket_acls()
+        self.findings = (
+            self.collate_findings(self.accounts, self.roles)
+            | self.collate_findings(self.accounts, self.bucket_policies)
+            | self.collate_acl_findings(self.accounts, self.bucket_acls)
+        )
 
     def get_org_accounts(self) -> DefaultDict[str, Dict]:
         """Get Account Ids from the AWS Organization
@@ -42,10 +50,66 @@ class Scan:
             print(e)
         return accounts
 
+    def _get_bucket_acls(self) -> DefaultDict[str, List[Dict[Any, Any]]]:
+        bucket_acls = defaultdict(str)
+        buckets = self._buckets
+        s3 = boto3.client("s3")
+        for bucket in buckets["Buckets"]:
+            bucket_arn = f'arn:aws:s3:::{bucket["Name"]}'
+            try:
+                bucket_acls[bucket_arn] = s3.get_bucket_acl(Bucket=bucket["Name"])["Grants"]
+            except ClientError as e:
+                if e.response["Error"]["Code"] == "AccessDenied":
+                    bucket_acls[bucket_arn] = [
+                        {
+                            "Grantee": {"DisplayName": "AccessDenied", "ID": "AccessDenied", "Type": "CanonicalUser"},
+                            "Permission": "FULL_CONTROL",
+                        }
+                    ]
+                else:
+                    print(e)
+                    continue
+        return bucket_acls
+
+    def _get_bucket_policies(self) -> DefaultDict[str, Dict[Any, Any]]:
+        """Get a dictionary of buckets and their policies from the AWS Account
+
+        Returns:
+            DefaultDict[str, str]: Key of BucketARN, Value of PolicyDocument
+        """
+        bucket_policies = defaultdict(str)
+        buckets = self._buckets
+        s3 = boto3.client("s3")
+        for bucket in buckets["Buckets"]:
+            bucket_arn = f'arn:aws:s3:::{bucket["Name"]}'
+            try:
+                bucket_policies[bucket_arn] = json.loads(s3.get_bucket_policy(Bucket=bucket["Name"])["Policy"])
+            except ClientError as e:
+                if e.response["Error"]["Code"] == "AccessDenied":
+                    bucket_policies[bucket_arn] = {
+                        "Version": "2012-10-17",
+                        "Statement": [
+                            {
+                                "Sid": "ExampleAcl",
+                                "Effect": "Allow",
+                                "Principal": {"AWS": ["arn:aws:iam::111122223333:root"]},
+                                "Action": ["s3:*"],
+                                "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET/*",
+                            }
+                        ],
+                    }
+                    continue
+                elif e.response["Error"]["Code"] == "NoSuchBucketPolicy":
+                    continue
+                else:
+                    print(e)
+                    continue
+        return bucket_policies
+
     def _get_roles(
         self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True
-    ) -> DefaultDict[str, str]:
-        """Get a list of roles from the AWS Account
+    ) -> DefaultDict[str, Dict[Any, Any]]:
+        """Get a dictionary of roles and their policies from the AWS Account
 
         Args:
             exclude_service (Optional[bool], optional): exclude roles starting with /service-role/. Defaults to True.
@@ -69,6 +133,10 @@ class Scan:
 
         return roles
 
+    def list_account_buckets(self) -> Dict[str, Dict[Any, Any]]:
+        s3 = boto3.client("s3")
+        return s3.list_buckets()
+
     def get_all_accounts(self) -> DefaultDict[str, Set]:
         """Get all known accounts and from the AWS Organization
 
@@ -86,54 +154,95 @@ class Scan:
 
         # Populate Org accounts
         org_accounts = self.get_org_accounts()
+        aws_canonical_user = self._buckets["Owner"]
 
-        self.known_accounts_data = self.known_accounts_data | org_accounts  # type: ignore
-
+        # Add to the set of org_accounts
         accounts["org_accounts"] = set(org_accounts.keys())
+        accounts["org_accounts"].add(aws_canonical_user["ID"])
+
+        # Combine the metadata
+        self.known_accounts_data[aws_canonical_user["ID"]] = {"owner": aws_canonical_user["DisplayName"]}
+        self.known_accounts_data = self.known_accounts_data | org_accounts  # type: ignore
 
         return accounts
 
+    def collate_acl_findings(
+        self, accounts: DefaultDict[str, Set], resources: DefaultDict[str, List[Dict[Any, Any]]]
+    ) -> DefaultDict[str, Finding]:
+        findings = defaultdict(Finding)  # type: DefaultDict[str, Finding]
+
+        for resource, grants in resources.items():
+            for grant in grants:
+                if grant["Grantee"]["ID"] == self._buckets["Owner"]["ID"]:
+                    continue  # Don't add if the ACL is of the same account
+                elif grant["Grantee"]["ID"] in accounts["known_accounts"]:
+                    if resource in findings:
+                        findings[resource] = Finding(known_accounts=grant["Grantee"]["ID"])
+                    else:
+                        findings[resource].known_accounts.append(grant["Grantee"]["ID"])
+                elif grant["Grantee"]["ID"] in accounts["org_accounts"]:
+                    if resource in findings:
+                        findings[resource] = Finding(org_accounts=grant["Grantee"]["ID"])
+                    else:
+                        findings[resource].org_accounts.append(grant["Grantee"]["ID"])
+                else:
+                    if resource in findings:
+                        findings[resource] = Finding(unknown_accounts=grant["Grantee"]["ID"])
+                    else:
+                        findings[resource].unknown_accounts.append(grant["Grantee"]["ID"])
+
+        return findings
+
     def collate_findings(
-        self, accounts: DefaultDict[str, Set], roles: DefaultDict[str, str]
+        self, accounts: DefaultDict[str, Set], resources: DefaultDict[str, Dict[Any, Any]]
     ) -> DefaultDict[str, Finding]:
         """Combine all accounts with all the roles to get findings
 
         Args:
             accounts (DefaultDict[str, Set]): Key of account type. Value account ids
-            roles (DefaultDict[str, str]): Key RoleName. Value AssumeRolePolicyDocument
+            resources (DefaultDict[str, Dict[Any, Any]]): Key ResourceIdentifier. Value Dict PolicyDocument
 
         Returns:
-            DefaultDict[str, Finding]: [description]
+            DefaultDict[str, Finding]: Key of ARN, Value of Finding
         """
         findings = defaultdict(Finding)  # type: DefaultDict[str, Finding]
-        for role, assume_policy in roles.items():
-            trust_policy = Policy(assume_policy)
-            for unparsed_principal in trust_policy.principals:
-                principal = ARN(unparsed_principal)  # type: Any
+        for resource, policy_document in resources.items():
+            try:
+                policy = Policy(policy_document)
+            except:
+                print(policy_document)
+                continue
+            for unparsed_principal in policy.whos_allowed():
+                try:
+                    principal = ARN(unparsed_principal.value)  # type: Any
+                except Exception as e:
+                    print(e)
+                    print(unparsed_principal)
+                    continue
                 # Check if Principal is an AWS Service
                 if principal.service:
-                    if role in findings:
-                        findings[role].aws_services.append(principal.arn)
+                    if resource in findings:
+                        findings[resource].aws_services.append(principal.arn)
                     else:
-                        findings[role] = Finding(aws_services=[principal.arn])
+                        findings[resource] = Finding(aws_services=[principal.arn])
                 # Check against org_accounts
                 elif principal.account_number in accounts["org_accounts"]:
-                    if role in findings:
-                        findings[role].org_accounts.append(principal.arn)
+                    if resource in findings:
+                        findings[resource].org_accounts.append(principal.arn)
                     else:
-                        findings[role] = Finding(org_accounts=[principal.arn])
+                        findings[resource] = Finding(org_accounts=[principal.arn])
                 # Check against known external accounts
                 elif principal.account_number in accounts["known_accounts"]:
-                    if role in findings:
-                        findings[role].known_accounts.append(principal.arn)
+                    if resource in findings:
+                        findings[resource].known_accounts.append(principal.arn)
                     else:
-                        findings[role] = Finding(known_accounts=[principal.arn])
+                        findings[resource] = Finding(known_accounts=[principal.arn])
                 # Unknown Account
                 else:
-                    if role in findings:
-                        findings[role].unknown_accounts.append(principal.arn)
+                    if resource in findings:
+                        findings[resource].unknown_accounts.append(principal.arn)
                     else:
-                        findings[role] = Finding(unknown_accounts=[principal.arn])
+                        findings[resource] = Finding(unknown_accounts=[principal.arn])
         return findings
 
 

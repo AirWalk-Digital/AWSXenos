@@ -267,6 +267,26 @@
     "id": "cloudfront"
   }, {
     "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html",
+    "description": "Example Canonical User ID",
+    "id": "79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html",
+    "description": "Anonymous Canonical User ID",
+    "id": "65a011a29cdf8ec533ec3d1ccaae921c"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html",
+    "description": "AWS Log Delivery Canonical User ID",
+    "id": "c4c1ede66af53448b93c283ce9448c4ba468c9432aa01d700d3878632f77d2d0"
+  }, {
+    "owner": "Amazon Web Services",
+    "source": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-getting-started.html#step-2",
+    "description": "AWS ZA_Team Canonical User ID",
+    "id": "6aa5a366c34c1cbe25dc49211496e913e0351eb0e8c37aa3477e40942ec6b97c"
+  }, {
+    "owner": "Amazon Web Services",
     "source": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-getting-started.html#step-2",
     "description": "Billing",
     "id": "386209384616"
@@ -451,9 +471,9 @@
     "description": "Spotinst",
     "id": "922761411349"
   }, {
-    "owner": "Redlock",
-    "source": "https://docs.paloaltonetworks.com/redlock/redlock-admin/connect-your-cloud-platform-to-redlock/onboard-your-aws-account/set-up-your-aws-account.html",
-    "description": "Redlock",
+    "owner": "Prisma",
+    "source": "https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-aws-account/set-up-your-prisma-cloud-role-for-aws-manual.html", 
+    "description": "Prisma Cloud",
     "id": "188619942792"
   }, {
     "owner": "Sumo Logic",

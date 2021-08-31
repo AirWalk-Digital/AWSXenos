@@ -27,15 +27,15 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col"> role </th>
-                                    <th scope="col"> principal </th>
+                                    <th scope="col"> ARN </th>
+                                    <th scope="col"> Principal </th>
                                     <th scope="col"> Account Owner </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for finding in findings %}
                                 <tr>
-                                    <td>{{ finding.role }}</td>
+                                    <td>{{ finding.ARN }}</td>
                                     <td>{{ finding.principal }}</td>
                                     {% if finding.external_info.owner %}
                                     <td>{{ finding.external_info.owner}} - {{finding.external_info.source}}</td>

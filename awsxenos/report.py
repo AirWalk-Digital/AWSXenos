@@ -17,7 +17,7 @@ class Report:
         self, findings: DefaultDict[str, Finding], account_info: DefaultDict[str, Dict]
     ) -> DefaultDict[str, List]:
         summary = defaultdict(list)
-        for role, finding in findings.items():
+        for resource, finding in findings.items():
             # Refactor
             # for account_type, principal in finding
             if finding.known_accounts:
@@ -25,7 +25,7 @@ class Report:
                     role_arn = ARN(principal)
                     summary["known_accounts"].append(
                         {
-                            "role": role,
+                            "ARN": resource,
                             "principal": principal,
                             "external_info": account_info[role_arn.account_number],
                         }
@@ -35,7 +35,7 @@ class Report:
                     role_arn = ARN(principal)
                     summary["org_accounts"].append(
                         {
-                            "role": role,
+                            "ARN": resource,
                             "principal": finding.org_accounts,
                             "external_info": account_info[role_arn.account_number],
                         }
@@ -45,7 +45,7 @@ class Report:
                     role_arn = ARN(principal)
                     summary["aws_services"].append(
                         {
-                            "role": role,
+                            "ARN": resource,
                             "principal": finding.aws_services,
                             "external_info": account_info[role_arn.tech],
                         }
@@ -55,7 +55,7 @@ class Report:
                     role_arn = ARN(principal)
                     summary["unknown_accounts"].append(
                         {
-                            "role": role,
+                            "ARN": resource,
                             "principal": finding.unknown_accounts,
                             "external_info": account_info[role_arn.account_number],
                         }
