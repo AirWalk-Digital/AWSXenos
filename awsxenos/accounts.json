@@ -19,6 +19,11 @@
     "description": "StackDriver",
     "id": "314658760392"
   }, {
+    "owner": "Crowdstrike",
+    "source": "https://www.crowdstrike.com/falcon/2020/wp-content/uploads/2020/10/Crowdstrike-AWS-ControlTower-Implementation-Guide.pdf",
+    "description": "Crowdstrike Falcon",
+    "id": "292230061137"
+  }, {
     "owner": "Zencoder",
     "source": "https://support.brightcove.com/using-zencoder-s3",
     "description": "The Performance Leader in File Cloud Encoding",

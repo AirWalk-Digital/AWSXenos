@@ -94,13 +94,59 @@ class Fixtures:
             ]
         }
         accounts["org_accounts"] = set([account["Id"] for account in boto_list_orgs["Accounts"]])
+        accounts["org_accounts"].add("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
         accounts["known_accounts"] = set(["000000000001"])
         return accounts
+
+    @staticmethod
+    def mock_list_s3_buckets():
+        return {
+            "Buckets": [
+                {"Name": "examplebucket", "CreationDate": datetime.datetime(2021, 3, 29, 20, 17, 11)},
+                {"Name": "anotherexample", "CreationDate": datetime.datetime(2021, 5, 11, 8, 58, 53)},
+                {
+                    "Name": "aws-athena-query-results-examplebucket",
+                    "CreationDate": datetime.datetime(2021, 8, 10, 10, 12, 28),
+                },
+            ],
+            "Owner": {"DisplayName": "exampleaccount", "ID": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"},
+        }
+
+    @staticmethod
+    def mock_get_bucket_policies():
+        return {
+            "arn:aws:s3:::examplebucketwithpolicy": {
+                "Version": "2008-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": "*",
+                        "Action": "s3:*",
+                        "Resource": "arn:aws:s3:::examplebucketwithpolicy",
+                    }
+                ],
+            }
+        }
+
+    @staticmethod
+    def mock_get_bucket_acl():
+        return {
+            "arn:aws:s3:::examplebucket": [
+                {
+                    "Grantee": {
+                        "DisplayName": "exampleexternalaccount",
+                        "ID": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+                        "Type": "CanonicalUser",
+                    },
+                    "Permission": "FULL_CONTROL",
+                }
+            ]
+        }
 
     @staticmethod
     def mock_known_accounts():
         known_accounts = defaultdict(dict)
         accounts = Fixtures.mock_get_accounts()
         for account in accounts:
-            known_accounts[account] = {"owner":"test", "description":"test"}
+            known_accounts[account] = {"owner": "test", "description": "test"}
         return known_accounts

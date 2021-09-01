@@ -18,22 +18,13 @@ This tool reports against the [Trusted Relationship Technique](https://attack.mi
 
 Access Analyzer falls short because:
 
-A. You need to enable it in every region. 
+1. You need to enable it in every region. 
 
-B. Identified external entities might be known entities. E.g. a trusted third party vendor or a vendor you no longer trust. An Account number is seldom useful. 
+2. Identified external entities might be known entities. E.g. a trusted third party vendor or a vendor you no longer trust. An Account number is seldom useful. 
 
-C. Zone of trust is a fixed set of the AWS organisation. You won’t know if a trust between sandbox->prod has been established. 
+3. Zone of trust is a fixed set of the AWS organisation. You won’t know if a trust between sandbox->prod has been established. 
 
-D. Does not identify AWS Service principals. This is mainly important because of [Wiz's AWSConfig, et al vulnverabilities](http://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Breaking-The-Isolation-Cross-Account-AWS-Vulnerabilities.pdf)
-
-
-Tools like [ScoutSuite](https://github.com/nccgroup/ScoutSuite/blob/db827e3d8e36e3bc7adcb8c62f2453960353c2ef/ScoutSuite/providers/aws/rules/findings/iam-assume-role-lacks-external-id-and-mfa.json) can uncover the external trusts that don't have MFA.
-[Dome9](https://gsl.dome9.com/D9.AWS.IAM.61.html) can discover if there are conditions, associated.
-
-The list goes on, however:
-1. A malicious external trust can have MFA or a condition attached.
-2. The accounts could be from within the AWS Organization, from a known provider (see [accounts.json](awsxenos/accounts.json)), or unknown
-3. The checks helps you organise and verify if you still have a need for these trusts and if new trusts are introduced.
+4. Does not identify AWS Service principals. This is mainly important because of [Wiz's AWSConfig, et al vulnverabilities](http://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Breaking-The-Isolation-Cross-Account-AWS-Vulnerabilities.pdf)
 
 
 ## How to run
@@ -42,8 +33,10 @@ The list goes on, however:
 ```sh
 pip install AWSXenos
 awsxenos --reporttype HTML -w report.html
+awsxenos --reporttype JSON -w report.json
 ```
-You will get a JSON output and an HTML report.
+You will get an HTML and JSON report.
+
 See (example report)[example/example.html]
 
 ### Library
@@ -60,7 +53,7 @@ html_summary = r.HTML_report()
 
 ### IAM Permissions
 
-Policy should like this.
+Permissions required.
 
 ```json
 {
@@ -69,7 +62,9 @@ Policy should like this.
     {
       "Action": [
         "iam:ListRoles"
-        "organizations:ListAccounts"
+        "organizations:ListAccounts",
+        "s3:GetBucketPolicy",
+        "s3:GetBucketAcl"
       ],
       "Effect": "Allow",
       "Resource": "*"
@@ -86,15 +81,16 @@ source /env/bin/activate
 pip install -r requirements.txt
 ```
 ## I want to add more known accounts
-Create a PR or raise an issue
+Create a PR or raise an issue. Contributions are welcome.
 
 ## Features
 - [x] IAM Roles
 - [x] S3 Bucket Policies and ACLs
 - [x] Use as library
 - [x] HTML and JSON output 
-- [x] Supports AWS Services 
+- [x] Supports AWS Services
+
 ## TODO
-- [ ] Add support for more resource policies services, e.g. SNS, SQS, Lambda
+- [ ] Add support for more resource policies services, e.g. SecretsManager, KSM, SNS, SQS, Lambda
 - [ ] Add support for Cognito, RAM
 - [ ] Add support for VPCE
