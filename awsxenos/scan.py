@@ -19,7 +19,7 @@ from awsxenos import package_path
 class Scan:
     def __init__(self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True) -> None:
         self.known_accounts_data = defaultdict(dict)  # type: DefaultDict[str, Dict[Any, Any]]
-        self.findings = defaultdict(Finding)
+        self.findings = defaultdict(Finding) # type: DefaultDict[str, Finding]
         self._buckets = self.list_account_buckets()
         self.roles = self.get_roles(exclude_service, exclude_aws)
         self.accounts = self.get_all_accounts()
