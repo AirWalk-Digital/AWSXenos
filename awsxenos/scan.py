@@ -19,16 +19,17 @@ from awsxenos import package_path
 class Scan:
     def __init__(self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True) -> None:
         self.known_accounts_data = defaultdict(dict)  # type: DefaultDict[str, Dict[Any, Any]]
+        self.findings = defaultdict(Finding)
         self._buckets = self.list_account_buckets()
         self.roles = self.get_roles(exclude_service, exclude_aws)
         self.accounts = self.get_all_accounts()
         self.bucket_policies = self.get_bucket_policies()
         self.bucket_acls = self.get_bucket_acls()
-        self.findings = (
-            self.collate_findings(self.accounts, self.roles)
-            | self.collate_findings(self.accounts, self.bucket_policies)
-            | self.collate_acl_findings(self.accounts, self.bucket_acls)
-        )
+        for resource in ["roles", "bucket_policies", "bucket_acls"]:
+            if resource != "bucket_acls":
+                self.findings.update(self.collate_findings(self.accounts, getattr(self, resource)))
+            else:
+                self.findings.update(self.collate_acl_findings(self.accounts, getattr(self, resource)))
 
     def get_org_accounts(self) -> DefaultDict[str, Dict]:
         """Get Account Ids from the AWS Organization
