@@ -6,8 +6,8 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = fh.read()
 setup(
     name="AWSXenos",
-    version="0.0.3",
-    author="CostasKo",
+    version="0.0.1",
+    author="CostasK",
     author_email="costas.kourmpoglou@airwalkconsulting.com",
     license="MIT",
     description="Scan and classify cross-account roles in your AWS Account",
