@@ -63,6 +63,7 @@ Permissions required.
       "Action": [
         "iam:ListRoles"
         "organizations:ListAccounts",
+        "s3:ListAllMyBuckets",
         "s3:GetBucketPolicy",
         "s3:GetBucketAcl"
       ],
