@@ -6,7 +6,7 @@ AWSXenos will list all the trust relationships in all the IAM roles, and S3 buck
 
 This tool reports against the [Trusted Relationship Technique](https://attack.mitre.org/techniques/T1199/) of the ATT&CK Framework. 
 
-* For the "known" accounts list AWSXenos uses https://github.com/rupertbg/aws-public-account-ids.
+* For the "known" accounts list AWSXenos uses a modified version of [known AWS Account IDs](https://github.com/rupertbg/aws-public-account-ids).
 * For the Org accounts list AWSXenos query AWS Organizations.
 * AWS Services are classified separately.
 * Everything else falls under unknown account
@@ -37,7 +37,7 @@ awsxenos --reporttype JSON -w report.json
 ```
 You will get an HTML and JSON report.
 
-See (example report)[example/example.html]
+See [example report](example/example.html)
 
 ### Library
 
