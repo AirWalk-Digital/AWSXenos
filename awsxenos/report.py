@@ -5,59 +5,61 @@ import json
 from jinja2 import Environment, FileSystemLoader  # type: ignore
 from policyuniverse.arn import ARN  # type: ignore
 
-from awsxenos.finding import Finding
+from awsxenos.finding import AccountType, Finding
 from awsxenos import package_path
 
 
 class Report:
-    def __init__(self, findings: DefaultDict[str, Finding], account_info: DefaultDict[str, Dict]) -> None:
+    def __init__(self, findings: DefaultDict[str, AccountType], account_info: DefaultDict[str, Dict]) -> None:
         self.summary = self._summarise(findings, account_info)
 
     def _summarise(
-        self, findings: DefaultDict[str, Finding], account_info: DefaultDict[str, Dict]
+        self, findings: DefaultDict[str, AccountType], account_info: DefaultDict[str, Dict]
     ) -> DefaultDict[str, List]:
         summary = defaultdict(list)
-        for resource, finding in findings.items():
+        for resource, accounttype in findings.items():
             # Refactor
             # for account_type, principal in finding
-            if finding.known_accounts:
-                for principal in finding.known_accounts:
-                    role_arn = ARN(principal)
+            if accounttype.known_accounts:
+                for finding in accounttype.known_accounts:
+                    role_arn = ARN(finding.principal)
                     summary["known_accounts"].append(
                         {
                             "ARN": resource,
-                            "principal": principal,
+                            "principal": accounttype.known_accounts,
                             "external_info": account_info[role_arn.account_number],
+                            "external_id": finding.external_id,
                         }
                     )
-            if finding.org_accounts:
-                for principal in finding.org_accounts:
-                    role_arn = ARN(principal)
+            if accounttype.org_accounts:
+                for finding in accounttype.org_accounts:
+                    role_arn = ARN(finding.principal)
                     summary["org_accounts"].append(
                         {
                             "ARN": resource,
-                            "principal": finding.org_accounts,
+                            "principal": accounttype.org_accounts,
                             "external_info": account_info[role_arn.account_number],
                         }
                     )
-            if finding.aws_services:
-                for principal in finding.aws_services:
-                    role_arn = ARN(principal)
+            if accounttype.aws_services:
+                for finding in accounttype.aws_services:
+                    role_arn = ARN(finding.principal)
                     summary["aws_services"].append(
                         {
                             "ARN": resource,
-                            "principal": finding.aws_services,
+                            "principal": accounttype.aws_services,
                             "external_info": account_info[role_arn.tech],
                         }
                     )
-            if finding.unknown_accounts:
-                for principal in finding.unknown_accounts:
-                    role_arn = ARN(principal)
+            if accounttype.unknown_accounts:
+                for finding in accounttype.unknown_accounts:
+                    role_arn = ARN(finding.principal)
                     summary["unknown_accounts"].append(
                         {
                             "ARN": resource,
-                            "principal": finding.unknown_accounts,
+                            "principal": accounttype.unknown_accounts,
                             "external_info": account_info[role_arn.account_number],
+                            "external_id": finding.external_id,
                         }
                     )
         return summary

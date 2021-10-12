@@ -28,9 +28,9 @@ class Fixtures:
                 },
                 {
                     "Path": "/",
-                    "RoleName": "ExternalRole",
+                    "RoleName": "ExternalRoleNoExternalID",
                     "RoleId": "AROA02I634LQK4QC3ISLR",
-                    "Arn": "arn:aws:iam::000000000000:role/ExternalRole",
+                    "Arn": "arn:aws:iam::000000000000:role/ExternalRoleNoExternalID",
                     "CreateDate": datetime.datetime(2021, 4, 8, 14, 1, 33),
                     "AssumeRolePolicyDocument": {
                         "Version": "2012-10-17",
@@ -39,6 +39,63 @@ class Fixtures:
                                 "Effect": "Allow",
                                 "Principal": {"AWS": "arn:aws:iam::000000000001:root"},
                                 "Action": "sts:AssumeRole",
+                            }
+                        ],
+                    },
+                    "MaxSessionDuration": 3600,
+                },
+                {
+                    "Path": "/",
+                    "RoleName": "ExternalRole",
+                    "RoleId": "AROA02I634LQK4QC3IIWF",
+                    "Arn": "arn:aws:iam::000000000000:role/ExternalRole",
+                    "CreateDate": datetime.datetime(2021, 4, 8, 14, 1, 34),
+                    "AssumeRolePolicyDocument": {
+                        "Version": "2012-10-17",
+                        "Statement": [
+                            {
+                                "Effect": "Allow",
+                                "Principal": {"AWS": "arn:aws:iam::000000000001:root"},
+                                "Action": "sts:AssumeRole",
+                                "Condition": {"StringEquals": {"sts:ExternalId": "someexternalid"}},
+                            },
+                        ],
+                    },
+                    "MaxSessionDuration": 3600,
+                },
+                {
+                    "Path": "/",
+                    "RoleName": "ExternalRoleFromSaml",
+                    "RoleId": "AROA02I634LQK4QC3IIWF",
+                    "Arn": "arn:aws:iam::000000000000:role/ExternalRoleFromSaml",
+                    "CreateDate": datetime.datetime(2021, 4, 8, 14, 1, 34),
+                    "AssumeRolePolicyDocument": {
+                        "Version": "2012-10-17",
+                        "Statement": [
+                            {
+                                "Effect": "Allow",
+                                "Principal": {"Federated": "arn:aws:iam::000000000000:saml-provider/SAMLProvider"},
+                                "Action": "sts:AssumeRoleWithSAML",
+                                "Condition": {"StringEquals": {"SAML:aud": "https://signin.aws.amazon.com/saml"}},
+                            }
+                        ],
+                    },
+                    "MaxSessionDuration": 3600,
+                },
+                {
+                    "Path": "/",
+                    "RoleName": "ExternalUserWithinOrg",
+                    "RoleId": "AROA02I634LQK4QC3IIWF",
+                    "Arn": "arn:aws:iam::000000000000:user/ExternalUserWithinOrg",
+                    "CreateDate": datetime.datetime(2021, 4, 8, 14, 1, 34),
+                    "AssumeRolePolicyDocument": {
+                        "Version": "2012-10-17",
+                        "Statement": [
+                            {
+                                "Effect": "Allow",
+                                "Principal": {"AWS" : "arn:aws:iam::000000000002:root"},
+                                "Action": "sts:AssumeRoleWithSAML",
+                                "Condition": {"StringEquals": {"aws:PrincipalOrgID": "o-290nd8mdls"}},
                             }
                         ],
                     },
