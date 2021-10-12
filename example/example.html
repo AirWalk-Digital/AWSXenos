@@ -27,37 +27,32 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col"> role </th>
-                                    <th scope="col"> principal </th>
+                                    <th scope="col"> ARN </th>
+                                    <th scope="col"> Principal </th>
                                     <th scope="col"> Account Owner </th>
+                                    <th scope="col"> External ID</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                                           
-                                                             
+                                
                                 <tr>
-                                    <td>arn:aws:iam::123456789012:role/aws-elasticbeanstalk-ec2-role</td>
-                                    <td>['ec2.amazonaws.com']</td>
+                                    <td>arn:aws:iam::123456789012:role/service-role/AWSCloud9SSMAccessRole</td>
+                                    <td>[cloud9.amazonaws.com, ec2.amazonaws.com]</td>
                                     
                                     <td> - 
                                         </td>
-                                    
+        
+                                   <td></td>
                                     
                                 <tr>
-                                    <td>arn:aws:iam::123456789012:role/service-role/AWSCodePipelineServiceRole-eu-west-1-test</td>
-                                    <td>['codepipeline.amazonaws.com']</td>
+                                    <td>arn:aws:iam::123456789012:role/service-role/AWSDeepRacerAccessRole</td>
+                                    <td>[deepracer.amazonaws.com]</td>
                                     
                                     <td> - 
                                         </td>
-
-                                    
-                                <tr>
-                                    <td>arn:aws:iam::123456789012:role/Test-VPCFlowLogs</td>
-                                    <td>['vpc-flow-logs.amazonaws.com']</td>
-                                    
-                                    <td> - 
-                                        </td>
-                                    
+                                 
+                                   <td></td>
+            
                                 </tr>
                             </tbody>
                         </table>
@@ -71,28 +66,32 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col"> role </th>
-                                    <th scope="col"> principal </th>
+                                    <th scope="col"> ARN </th>
+                                    <th scope="col"> Principal </th>
                                     <th scope="col"> Account Owner </th>
+                                    <th scope="col"> External ID</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                
+                                <tr>
+                                    <td>arn:aws:iam::123456789012:role/AWS-QuickSetup-StackSet-Local-ExecutionRole</td>
+                                    <td>[arn:aws:iam::00000000003:role/AWS-QuickSetup-StackSet-Local-AdministrationRole]</td>
                                     
+                                    <td>Example Org Account - CREATED
+                                        ACTIVE</td>                         
+                                    
+                                   <td></td>      
                                 <tr>
                                     <td>arn:aws:iam::123456789012:role/AWSCloudFormationStackSetExecutionRole</td>
-                                    <td>['arn:aws:iam::678901234567:root']</td>
+                                    <td>[arn:aws:iam::00000000002:root]</td>
                                     
-                                    <td>AirWalk Management Account - INVITED
+                                    <td>Example Org Billing Account - INVITED
                                         ACTIVE</td>
                                     
                                     
-                                <tr>
-                                    <td>arn:aws:iam::123456789012:role/aws-reserved/sso.amazonaws.com/eu-west-1/AWSReservedSSO_AdministratorAccess_xxxxxxxxx</td>
-                                    <td>['arn:aws:iam::123456789012:saml-provider/AWSSSO_xxxxxxxxx_DO_NOT_DELETE']</td>
-                                    
-                                    <td>AirWalk Sandbox  - CREATED
-                                        ACTIVE</td>
-                                    
+                                   <td></td>
+
                                 </tr>
                             </tbody>
                         </table>
@@ -106,19 +105,33 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col"> role </th>
-                                    <th scope="col"> principal </th>
+                                    <th scope="col"> ARN </th>
+                                    <th scope="col"> Principal </th>
                                     <th scope="col"> Account Owner </th>
+                                    <th scope="col"> External ID</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                
-                                <tr>                 
+                                                                    
+                                                               
+                                <tr>
+                                    <td>arn:aws:iam::123456789012:role/Notintheregister</td>
+                                    <td>['arn:aws:iam:666666666777:root']</td>
+                                    
+                                    <td> - 
+                                        </td>
+                                    
+                                    
+                                   <td>True</td>
+
+                                   <tr>                 
                                     <td>arn:aws:iam::123456789012:role/TotallyLegitRole</td>
                                     <td>['arn:aws:iam:666666666666:root']</td>
                                     
                                     <td> - 
-                                        </td>
+                                    </td>
+                                
+                                    <td class="bg-warning"> False  </td>
                                     
                                     
                                 </tr>
@@ -134,19 +147,24 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col"> role </th>
-                                    <th scope="col"> principal </th>
+                                    <th scope="col"> ARN </th>
+                                    <th scope="col"> Principal </th>
                                     <th scope="col"> Account Owner </th>
+                                    <th scope="col"> External ID</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 
                                 <tr>
-                                    <td>arn:aws:iam::123456789012:role/JupiterOne</td>
-                                    <td>arn:aws:iam::612791702201:root</td>
+                                    <td>arn:aws:iam::123456789012:role/Crowdstrike</td>
+                                    <td>[arn:aws:iam::292230061137:root]</td>
                                     
-                                    <td>JupiterOne - https://github.com/JupiterOne/jupiterone-aws-cloudformation/commit/0adf947dc98404cef1eee1f570f39c05c87d3f41</td>
-                                     
+                                    <td>Crowdstrike Falcon - https://www.crowdstrike.com/falcon/2020/wp-content/uploads/2020/10/Crowdstrike-AWS-ControlTower-Implementation-Guide.pdf</td>
+                                    
+                                    
+                                   <td>True</td>
+                                   
+                                    
                                 </tr>
                             </tbody>
                         </table>
