@@ -6,6 +6,7 @@ from unittest import mock
 
 from tests.fixtures import Fixtures
 from awsxenos.scan import Scan
+from awsxenos.finding import Finding
 
 
 class ScanTests(unittest.TestCase):
@@ -18,17 +19,35 @@ class ScanTests(unittest.TestCase):
         s = Scan()
         s.known_accounts_data = mock.MagicMock(return_value=Fixtures.mock_known_accounts())
         self.assertEqual(type(s.findings), collections.defaultdict)
-        for role in s.findings.keys():
-            self.assertIn("arn:aws:", role)
+        for resource in s.findings.keys():
+            self.assertIn("arn:aws:", resource)
+
         self.assertGreaterEqual(
             len(s.findings["arn:aws:iam::000000000000:role/service-role/AccessAnalyzerMonitor"].aws_services),
             1,
         )
+        # known_accounts
+        self.assertEqual(
+            s.findings["arn:aws:iam::000000000000:role/ExternalRoleNoExternalID"].known_accounts,
+            [Finding(principal="arn:aws:iam::000000000001:root", external_id=False)],
+        )
+        self.assertEqual(
+            s.findings["arn:aws:iam::000000000000:role/ExternalRole"].known_accounts,
+            [Finding(principal="arn:aws:iam::000000000001:root", external_id=True)],
+        )
+        # unknown_accounts
+        self.assertEqual(
+            s.findings["arn:aws:s3:::examplebucket"].unknown_accounts,
+            [Finding(principal="yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy", external_id=True)],
+        )
+        # bucket policy
+        self.assertEqual(
+            s.findings["arn:aws:s3:::examplebucketwithpolicy"].unknown_accounts,
+            [Finding(principal="*", external_id=False)],
+        )
 
-        self.assertListEqual(
-            s.findings["arn:aws:iam::000000000000:role/ExternalRole"].known_accounts, ["arn:aws:iam::000000000001:root"]
+        # org_accounts
+        self.assertEqual(
+            s.findings["arn:aws:iam::000000000000:role/ExternalRoleFromSaml"].org_accounts,
+            [Finding(principal="arn:aws:iam::000000000000:saml-provider/SAMLProvider", external_id=True)],
         )
-        self.assertListEqual(
-            s.findings["arn:aws:s3:::examplebucket"].unknown_accounts, ["yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"]
-        )
-        self.assertListEqual(s.findings["arn:aws:s3:::examplebucketwithpolicy"].unknown_accounts, ["*"])

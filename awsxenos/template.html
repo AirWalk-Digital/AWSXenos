@@ -30,6 +30,7 @@
                                     <th scope="col"> ARN </th>
                                     <th scope="col"> Principal </th>
                                     <th scope="col"> Account Owner </th>
+                                    <th scope="col"> External ID</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,6 +44,11 @@
                                     <td>{{ finding.external_info.Name}} - {{finding.external_info.JoinedMethod}}
                                         {{finding.external_info.Status}}</td>
                                     {% endif %}
+                                    {% if (account_type == "unknown_accounts" or account_type == "known_accounts") and not finding.external_id  %}
+                                   <td class="bg-warning">{{finding.external_id}}</td>
+                                   {% else %}
+                                   <td>{{finding.external_id}}</td>
+                                   {% endif %}
                                     {% endfor %}
                                 </tr>
                             </tbody>

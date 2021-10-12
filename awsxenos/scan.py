@@ -2,6 +2,7 @@
 
 import argparse
 from collections import defaultdict
+from re import I
 from typing import Any, Optional, Dict, List, DefaultDict, Set
 import json
 import sys
@@ -10,8 +11,9 @@ import boto3  # type: ignore
 from botocore.exceptions import ClientError  # type: ignore
 from policyuniverse.arn import ARN  # type: ignore
 from policyuniverse.policy import Policy  # type: ignore
+from policyuniverse.statement import Statement, ConditionTuple  # type: ignore
 
-from awsxenos.finding import Finding
+from awsxenos.finding import AccountType, Finding
 from awsxenos.report import Report
 from awsxenos import package_path
 
@@ -19,7 +21,7 @@ from awsxenos import package_path
 class Scan:
     def __init__(self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True) -> None:
         self.known_accounts_data = defaultdict(dict)  # type: DefaultDict[str, Dict[Any, Any]]
-        self.findings = defaultdict(Finding) # type: DefaultDict[str, Finding]
+        self.findings = defaultdict(AccountType)  # type: DefaultDict[str, AccountType]
         self._buckets = self.list_account_buckets()
         self.roles = self.get_roles(exclude_service, exclude_aws)
         self.accounts = self.get_all_accounts()
@@ -169,7 +171,7 @@ class Scan:
 
     def collate_acl_findings(
         self, accounts: DefaultDict[str, Set], resources: DefaultDict[str, List[Dict[Any, Any]]]
-    ) -> DefaultDict[str, Finding]:
+    ) -> DefaultDict[str, AccountType]:
         """Combine all accounts with all the acls to classify findings
 
         Args:
@@ -177,25 +179,27 @@ class Scan:
             resources (DefaultDict[str, List[Dict[Any, Any]]]): [description]
 
         Returns:
-            DefaultDict[str, Finding]: [description]
+            DefaultDict[str, AccountType]: [description]
         """
-        findings = defaultdict(Finding)  # type: DefaultDict[str, Finding]
+        findings = defaultdict(AccountType)  # type: DefaultDict[str, AccountType]
 
         for resource, grants in resources.items():
             for grant in grants:
                 if grant["Grantee"]["ID"] == self._buckets["Owner"]["ID"]:
                     continue  # Don't add if the ACL is of the same account
                 elif grant["Grantee"]["ID"] in accounts["known_accounts"]:
-                    findings[resource].known_accounts.append(grant["Grantee"]["ID"])
+                    findings[resource].known_accounts.append(Finding(principal=grant["Grantee"]["ID"], external_id=True))
                 elif grant["Grantee"]["ID"] in accounts["org_accounts"]:
-                    findings[resource].org_accounts.append(grant["Grantee"]["ID"])
+                    findings[resource].org_accounts.append(Finding(principal=grant["Grantee"]["ID"], external_id=True))
                 else:
-                    findings[resource].unknown_accounts.append(grant["Grantee"]["ID"])
+                    findings[resource].unknown_accounts.append(
+                        Finding(principal=grant["Grantee"]["ID"], external_id=True)
+                    )
         return findings
 
     def collate_findings(
         self, accounts: DefaultDict[str, Set], resources: DefaultDict[str, Dict[Any, Any]]
-    ) -> DefaultDict[str, Finding]:
+    ) -> DefaultDict[str, AccountType]:
         """Combine all accounts with all the resources to classify findings
 
         Args:
@@ -203,9 +207,9 @@ class Scan:
             resources (DefaultDict[str, Dict[Any, Any]]): Key ResourceIdentifier. Value Dict PolicyDocument
 
         Returns:
-            DefaultDict[str, Finding]: Key of ARN, Value of Finding
+            DefaultDict[str, AccountType]: Key of ARN, Value of AccountType
         """
-        findings = defaultdict(Finding)  # type: DefaultDict[str, Finding]
+        findings = defaultdict(AccountType)  # type: DefaultDict[str, AccountType]
         for resource, policy_document in resources.items():
             try:
                 policy = Policy(policy_document)
@@ -217,20 +221,62 @@ class Scan:
                     principal = ARN(unparsed_principal.value)  # type: Any
                 except Exception as e:
                     print(e)
-                    findings[resource].known_accounts.append(unparsed_principal)
+                    findings[resource].known_accounts.append(Finding(principal=unparsed_principal, external_id=True))
                     continue
                 # Check if Principal is an AWS Service
                 if principal.service:
-                    findings[resource].aws_services.append(principal.arn)
+                    findings[resource].aws_services.append(Finding(principal=principal.arn, external_id=True))
                 # Check against org_accounts
                 elif principal.account_number in accounts["org_accounts"]:
-                    findings[resource].org_accounts.append(principal.arn)
+                    findings[resource].org_accounts.append(Finding(principal=principal.arn, external_id=True))
                 # Check against known external accounts
-                elif principal.account_number in accounts["known_accounts"]:
-                    findings[resource].known_accounts.append(principal.arn)
+                elif (
+                    principal.account_number in accounts["known_accounts"]
+                    or ConditionTuple(category="saml-endpoint", value="https://signin.aws.amazon.com/saml")
+                    in policy.whos_allowed()
+                ):
+                    sts_set = False
+                    for pstate in policy.statements:
+                        if "sts" in pstate.action_summary():
+                            try:
+                                conditions = [
+                                    k.lower() for k in list(pstate.statement["Condition"]["StringEquals"].keys())
+                                ]
+                                if "sts:externalid" in conditions:
+                                    findings[resource].known_accounts.append(
+                                        Finding(principal=principal.arn, external_id=True)
+                                    )
+                            except:
+                                findings[resource].known_accounts.append(
+                                    Finding(principal=principal.arn, external_id=False)
+                                )
+                            finally:
+                                sts_set = True
+                                break
+                    if not sts_set:
+                        findings[resource].known_accounts.append(Finding(principal=principal.arn, external_id=False))
+
                 # Unknown Account
                 else:
-                    findings[resource].unknown_accounts.append(principal.arn)
+                    sts_set = False
+                    for pstate in policy.statements:
+                        if "sts" in pstate.action_summary():
+                            try:
+                                conditions = [
+                                    k.lower() for k in list(pstate.statement["Condition"]["StringEquals"].keys())
+                                ]
+                                if "sts:externalid" in conditions:
+                                    findings[resource].unknown_accounts.append(
+                                        Finding(principal=principal.arn, external_id=True)
+                                    )
+                            except:
+                                findings[resource].unknown_accounts.append(
+                                    Finding(principal=principal.arn, external_id=False)
+                                )
+                            finally:
+                                break
+                    if not sts_set:
+                        findings[resource].unknown_accounts.append(Finding(principal=principal.arn, external_id=False))
         return findings
 
 
