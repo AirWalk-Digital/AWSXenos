@@ -35,8 +35,9 @@ Comparison based on AWS Documentation [1](https://docs.aws.amazon.com/IAM/latest
 
 | Service | AWSXenos | Access Analyzer |
 | :--: | :--: | :--: |
-| S3 | :white_check_mark: |  :white_check_mark: |
-| S3 ACLs | :white_check_mark: |
+| S3 Bucket| :white_check_mark: |  :white_check_mark: |
+| S3 Directory Buckets | :x: |  :white_check_mark: |
+| S3 Bucket ACLs | :white_check_mark: | :white_check_mark |
 | S3 Glacier | :x: | :x: |
 | IAM |  :white_check_mark: |  :white_check_mark: |
 | KMS |  :white_check_mark: |  :white_check_mark: |

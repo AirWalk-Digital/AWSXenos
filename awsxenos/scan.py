@@ -4,20 +4,15 @@ import concurrent.futures
 import importlib
 import json
 import sys
-from collections import defaultdict
 
-from typing import Any, Callable, DefaultDict, Dict, List, Optional, Set
+from typing import Any, Callable, Dict
 
 import boto3  # type: ignore
 import yaml  # type: ignore
-from botocore.exceptions import ClientError  # type: ignore
-from policyuniverse.arn import ARN  # type: ignore
-from policyuniverse.policy import Policy  # type: ignore
-from policyuniverse.statement import ConditionTuple, Statement  # type: ignore
 
 from awsxenos import package_path
 
-from awsxenos.finding import Accounts, Finding, Findings, Resources
+from awsxenos.finding import Accounts, Findings, Resources
 from awsxenos.report import Report
 
 """
@@ -60,7 +55,7 @@ class PreScan:
         s3 = boto3.client("s3")
         return s3.list_buckets()
 
-    def get_all_accounts(self) -> DefaultDict[str, Set]:
+    def get_all_accounts(self) -> Accounts:
         """Get all known accounts and from the AWS Organization
 
         Returns:
@@ -73,15 +68,15 @@ class PreScan:
             for account in accounts_file:
                 self.known_accounts[account["id"]] = account
 
-        accounts.known_accounts = set(self.known_accounts.keys())
+        accounts.known_accounts = set(self.known_accounts.keys())  # type: ignore
 
         # Populate Org accounts
         org_accounts = self.get_org_accounts()
         aws_canonical_user = self._buckets["Owner"]
 
         # Add to the set of org_accounts
-        accounts.org_accounts = set(org_accounts.keys())
-        accounts.org_accounts.add(aws_canonical_user["ID"])
+        accounts.org_accounts = set(org_accounts.keys())  # type: ignore
+        accounts.org_accounts.add(aws_canonical_user["ID"])  # type: ignore
 
         # Combine the metadata
         self.known_accounts[aws_canonical_user["ID"]] = {"owner": aws_canonical_user["DisplayName"]}
@@ -122,6 +117,7 @@ def load_and_run(config_file, accounts) -> Findings:
             try:
                 results.update(future.result())
             except Exception as e:
+                # TODO: Better handling, add logger
                 results[name] = str(e)  # Store the exception if the function call fails
     return results
 
@@ -157,7 +153,12 @@ def cli():
     write_output = args.write_output
 
     prescan = PreScan()
-    results = load_and_run(f"{package_path.resolve().parent}/{args.config}", prescan.accounts)
+    if not args.config:
+        config_path = f"{package_path.resolve().parent}/config.yaml"
+    else:
+        config_path = args.config
+
+    results = load_and_run(config_path, prescan.accounts)
     r = Report(results, prescan.known_accounts)
 
     if reporttype.lower() == "json":

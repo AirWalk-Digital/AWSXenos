@@ -16,14 +16,8 @@ class Report:
 
     def _summarise(self, findings: Findings, account_info: Resources) -> DefaultDict[str, List]:
         summary = defaultdict(list)
-        # print('Report - Findings')
-        # print(findings)
-        # print('Report - Account Info')
-        # print(account_info)
 
         for resource, account_type in findings.items():
-            # Refactor
-            # for account_type, principal in finding
             if account_type.known_accounts:
                 for finding in account_type.known_accounts:
                     role_arn = ARN(finding.principal)

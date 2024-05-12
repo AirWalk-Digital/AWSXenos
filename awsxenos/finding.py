@@ -1,14 +1,11 @@
 import abc
 from collections import defaultdict, UserDict
 from dataclasses import dataclass, field
-from typing import Any, DefaultDict, Dict, List, Set
+from typing import Any, DefaultDict, List, Set
 
-from policyuniverse.arn import ARN
-from policyuniverse.policy import Policy
-from policyuniverse.statement import ConditionTuple
-
-# ResourceResult - DefaultDict[str, Dict[Any, Any]]: - key arn
-# ReportResult - DefaultDict[str, AccountType] - key resource
+from policyuniverse.arn import ARN  # type: ignore
+from policyuniverse.policy import Policy  # type: ignore
+from policyuniverse.statement import ConditionTuple  # type: ignore
 
 
 @dataclass
@@ -62,13 +59,11 @@ class Service(metaclass=abc.ABCMeta):
             DefaultDict[str, AccountType]: Key of ARN, Value of AccountType
         """
 
-        print(resources)
         findings = Findings()
         for resource, policy_document in resources.items():
             try:
                 policy = Policy(policy_document)
             except:
-                print(policy_document)
                 continue
             for unparsed_principal in policy.whos_allowed():
                 try:

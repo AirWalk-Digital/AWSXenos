@@ -1,9 +1,11 @@
 import json
-from typing import DefaultDict, Optional, Set
+from typing import DefaultDict, Set
 
-import boto3
+import boto3  # type: ignore
 
 from awsxenos.finding import Findings, Resources, Service
+
+"""Secrets Manager Secrets Resource Policies"""
 
 
 class SecretsManager(Service):
@@ -11,9 +13,7 @@ class SecretsManager(Service):
     def fetch(self, accounts: DefaultDict[str, Set]) -> Findings:  # type: ignore
         return super().collate(accounts, self.get_secret_policies())
 
-    def get_secret_policies(
-        self, exclude_service: Optional[bool] = True, exclude_aws: Optional[bool] = True
-    ) -> Resources:
+    def get_secret_policies(self) -> Resources:
         """Get a dictionary of secrets and their policies from the AWS Account
 
         Args:

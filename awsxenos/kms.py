@@ -1,10 +1,11 @@
 import json
-from typing import DefaultDict, Optional, Set
+from typing import DefaultDict, Set
 
-import boto3
-from botocore.client import ClientError
+import boto3  # type: ignore
 
 from awsxenos.finding import Findings, Resources, Service
+
+"""KMS Customer Managed Keys resource policies"""
 
 
 class KMS(Service):

@@ -1,18 +1,20 @@
 from typing import DefaultDict, Optional, Set
 
-import boto3
+import boto3  # type: ignore
 
 from awsxenos.finding import Findings, Resources, Service
+
+"""IAM Roles trust policies"""
 
 
 class IAM(Service):
 
-    def fetch(
+    def fetch(  # type: ignore
         self,
         accounts: DefaultDict[str, Set],
         exclude_service: Optional[bool] = True,
         exclude_aws: Optional[bool] = True,
-    ) -> Findings:  # type: ignore
+    ) -> Findings:
         return super().collate(accounts, self.get_role_policies(exclude_service, exclude_aws))
 
     def get_role_policies(

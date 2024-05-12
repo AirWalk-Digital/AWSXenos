@@ -1,11 +1,12 @@
 import json
-from collections import defaultdict
-from typing import Any, DefaultDict, Dict, List, Set
+from typing import Any, DefaultDict, Dict, Set
 
-import boto3
-from botocore.client import ClientError
+import boto3  # type: ignore
+from botocore.client import ClientError  # type: ignore
 
-from awsxenos.finding import Accounts, Finding, Findings, Resources, Service
+from awsxenos.finding import Finding, Findings, Resources, Service
+
+"""S3 Buckets Resource Policy """
 
 
 class S3(Service):
@@ -25,7 +26,7 @@ class S3(Service):
         Returns:
             DefaultDict[str, str]: Key of BucketARN, Value of PolicyDocument
         """
-        bucket_policies = defaultdict(str)
+        bucket_policies = Resources()
         buckets = self._buckets
         s3 = boto3.client("s3")
         for bucket in buckets["Buckets"]:
@@ -66,6 +67,9 @@ class S3(Service):
         return bucket_policies
 
 
+"""S3 Buckets ACLs"""
+
+
 class S3ACL(Service):
 
     def fetch(self, accounts: DefaultDict[str, Set]) -> Findings:  # type: ignore
@@ -77,9 +81,7 @@ class S3ACL(Service):
         s3 = boto3.client("s3")
         return s3.list_buckets()
 
-    def custom_collate(
-        self, accounts: DefaultDict[str, Set], resources: DefaultDict[str, List[Dict[Any, Any]]]
-    ) -> Findings:
+    def custom_collate(self, accounts: DefaultDict[str, Set], resources: Resources) -> Findings:
         """Combine all accounts with all the acls to classify findings
 
         Args:
@@ -106,8 +108,8 @@ class S3ACL(Service):
                     )
         return findings
 
-    def get_acls(self) -> DefaultDict[str, List[Dict[Any, Any]]]:
-        bucket_acls = defaultdict(str)
+    def get_acls(self) -> Resources:
+        bucket_acls = Resources()
         buckets = self._buckets
         s3 = boto3.client("s3")
         for bucket in buckets["Buckets"]:
