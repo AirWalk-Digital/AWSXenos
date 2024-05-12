@@ -1,0 +1,11 @@
+plugins:
+  - module: .s3
+    class: S3
+  - module: .s3
+    class: S3ACL
+  - module: .iam
+    class: IAM
+  - module: .kms
+    class: KMS
+  - module: .secretsmanager
+    class: SecretsManager

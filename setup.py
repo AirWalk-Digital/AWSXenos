@@ -6,8 +6,8 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = fh.read()
 setup(
     name="AWSXenos",
-    version="0.0.2",
-    author="CostasK",
+    version="0.0.3",
+    author="Costas Kourmpoglou",
     author_email="costas.kourmpoglou@airwalkconsulting.com",
     license="MIT",
     description="Scan and classify cross-account roles in your AWS Account",
@@ -18,9 +18,9 @@ setup(
     packages=find_packages(),
     install_requires=[requirements],
     python_requires=">=3.7",
-    package_data={"": ["accounts.json", "template.html"]},
+    package_data={"": ["config.yaml", "accounts.json", "template.html"]},
     classifiers=[
-        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.10",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
