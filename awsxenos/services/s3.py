@@ -128,3 +128,24 @@ class S3ACL(Service):
                     print(e)
                     continue
         return bucket_acls
+
+
+"""S3 Glacier Vault Policies"""
+
+
+class S3Glacier(Service):
+
+    def fetch(self, accounts: DefaultDict[str, Set]) -> Findings:  # type: ignore
+        return super().collate(accounts, self.get_vault_policies())
+
+    def get_vault_policies(self) -> Resources:
+        vaults = Resources()
+        glacier = boto3.client("glacier")
+        paginator = glacier.get_paginator("list_vaults")
+        glacier_iterator = paginator.paginate()
+        for glacier_resp in glacier_iterator:
+            for vault in glacier_resp["VaultList"]:
+                vaults[vault["VaultARN"]] = json.loads(
+                    glacier.get_vault_access_policy(vaultName=vault["VaultName"])["policy"]["Policy"]
+                )
+        return vaults

@@ -87,7 +87,8 @@ class PreScan:
 
 def load_fetch(module_path: str, class_name: str) -> Callable:
     """Dynamically load "fetch"" from a given file/module and class"""
-    module = importlib.import_module(module_path, package="awsxenos")
+    path = f".services.{module_path}"
+    module = importlib.import_module(path, package="awsxenos")
     cls = getattr(module, class_name)
     instance = cls()
     fn = getattr(instance, "fetch")
@@ -118,6 +119,7 @@ def load_and_run(config_file, accounts) -> Findings:
                 results.update(future.result())
             except Exception as e:
                 # TODO: Better handling, add logger
+                print(e)
                 results[name] = str(e)  # Store the exception if the function call fails
     return results
 
@@ -136,9 +138,8 @@ def cli():
         "-c",
         "--config",
         dest="config",
-        action="store_false",
-        default="config.yaml",
-        help="Include service roles in the report",
+        action="store",
+        help="Config location",
     )
     parser.add_argument(
         "-w",
@@ -152,12 +153,12 @@ def cli():
     reporttype = args.reporttype
     write_output = args.write_output
 
-    prescan = PreScan()
     if not args.config:
         config_path = f"{package_path.resolve().parent}/config.yaml"
     else:
         config_path = args.config
 
+    prescan = PreScan()
     results = load_and_run(config_path, prescan.accounts)
     r = Report(results, prescan.known_accounts)
 

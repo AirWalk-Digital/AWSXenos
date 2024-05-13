@@ -1,11 +1,19 @@
 plugins:
-  - module: .s3
+  - module: s3
     class: S3
-  - module: .s3
+  - module: s3
     class: S3ACL
-  - module: .iam
+  - module: s3
+    class: S3Glacier
+  - module: iam
     class: IAM
-  - module: .kms
+  - module: kms
     class: KMS
-  - module: .secretsmanager
+  - module: secretsmanager
     class: SecretsManager
+  - module: eventbridge
+    class: EventBus
+  - module: lambda
+    class: LambdaResource
+  - module: sqs
+    class: SQS

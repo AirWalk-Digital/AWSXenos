@@ -37,14 +37,15 @@ Comparison based on AWS Documentation [1](https://docs.aws.amazon.com/IAM/latest
 | :--: | :--: | :--: |
 | S3 Bucket| :white_check_mark: |  :white_check_mark: |
 | S3 Directory Buckets | :x: |  :white_check_mark: |
-| S3 Bucket ACLs | :white_check_mark: | :white_check_mark |
-| S3 Glacier | :x: | :x: |
+| S3 Access Points | :x: |  :white_check_mark: |
+| S3 Bucket ACLs | :white_check_mark: | :white_check_mark: |
+| S3 Glacier | :white_check_mark: | :x: |
 | IAM |  :white_check_mark: |  :white_check_mark: |
 | KMS |  :white_check_mark: |  :white_check_mark: |
 | Secrets Manager |  :white_check_mark: |  :white_check_mark: |
-| Lambda | :x: |  :white_check_mark: |
+| Lambda | :white_check_mark: |  :white_check_mark: |
 | SNS | :x: |  :white_check_mark: |
-| SQS | :x: |  :white_check_mark: |
+| SQS | :white_check_mark: |  :white_check_mark: |
 | RDS Snapshots | :x: |  :white_check_mark: |
 | RDS Cluster Snapshots | :x: |  :white_check_mark: |
 | ECR | :x: |  :white_check_mark: |
@@ -52,7 +53,7 @@ Comparison based on AWS Documentation [1](https://docs.aws.amazon.com/IAM/latest
 | DynamoDB streams | :x: |  :white_check_mark: |
 | DynamoDB tables | :x: |  :white_check_mark: |
 | EBS Snapshots | :x: |  :white_check_mark: |
-| EventBridge | :x: | :x: |
+| EventBridge | :white_check_mark: | :x: |
 | EventBridge Schema | :x: | :x: |
 | Mediastore | :x: | :x: |
 | Glue | :x: | :x: |
@@ -66,7 +67,7 @@ Comparison based on AWS Documentation [1](https://docs.aws.amazon.com/IAM/latest
 | SES v2 | :x: | :x: |
 | Incident Manager | :x: | :x: |
 | Incident Manager Contacts | :x: | :x: |
-
+| VPC endpoints | :x: | :x: |
 
 ## How to run
 
