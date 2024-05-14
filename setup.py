@@ -6,18 +6,18 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = fh.read()
 setup(
     name="AWSXenos",
-    version="0.0.3",
+    version="0.2.0",
     author="Costas Kourmpoglou",
     author_email="costas.kourmpoglou@airwalkconsulting.com",
     license="MIT",
-    description="Scan and classify cross-account roles in your AWS Account",
+    description="Scan and classify cross-account roles and resources in your AWS Account",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/AirWalk-Digital/AWSXenos",
     py_modules=["awsxenos"],
     packages=find_packages(),
     install_requires=[requirements],
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     package_data={"": ["config.yaml", "accounts.json", "template.html"]},
     classifiers=[
         "Programming Language :: Python :: 3.10",
