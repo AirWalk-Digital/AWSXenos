@@ -23,6 +23,8 @@ class KMS(Service):
         paginator = kms.get_paginator("list_keys")
         kms_paginator = paginator.paginate()
         for kms_resp in kms_paginator:
+            if "Keys" not in kms_resp:
+                continue
             for key in kms_resp["Keys"]:
                 keys[key["KeyArn"]] = json.loads(kms.get_key_policy(KeyId=key["KeyId"], PolicyName="default")["Policy"])
         return keys

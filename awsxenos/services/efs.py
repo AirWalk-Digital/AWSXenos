@@ -18,6 +18,8 @@ class EFSResource(Service):
         efs = boto3.client("efs")
         paginator = efs.get_paginator("describe_file_systems")
         for page in paginator.paginate():
+            if "FileSystems" not in page:
+                continue
             for fs in page["FileSystems"]:
                 filesystems[fs["FileSystemArn"]] = json.loads(
                     efs.describe_file_system_policy(FileSystemId=fs["FileSystemId"])["Policy"]

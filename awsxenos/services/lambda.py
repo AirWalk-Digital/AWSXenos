@@ -19,6 +19,8 @@ class LambdaResource(Service):
         lam = boto3.client("lambda")
         paginator = lam.get_paginator("list_functions")
         for lam_resp in paginator.paginate():
+            if "Functions" not in lam_resp:
+                continue
             for func in lam_resp["Functions"]:
                 try:
                     lambdas[func["FunctionArn"]] = json.loads(
