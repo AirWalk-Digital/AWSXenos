@@ -2,7 +2,7 @@ import json
 from typing import DefaultDict, Set
 
 import boto3  # type: ignore
-from botocore.exceptions import ClientError # type: ignore
+from botocore.exceptions import ClientError  # type: ignore
 
 from awsxenos.finding import Findings, Resources, Service
 

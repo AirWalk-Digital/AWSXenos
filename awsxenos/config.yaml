@@ -17,3 +17,5 @@ plugins:
     class: LambdaResource
   - module: sqs
     class: SQS
+  - module: efs
+    class: EFSResource
