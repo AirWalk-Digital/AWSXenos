@@ -1,530 +1,3148 @@
-[{
-    "owner": "Cloudhealth",
-    "source": "https://github.com/mozilla/security/blob/master/operations/cloudformation-templates/cloudhealth_iam_role.json",
-    "description": "Cloudhealth",
-    "id": "454464851268"
-  }, {
-    "owner": "SegmentIO",
-    "source": ["https://segment.com/docs/destinations/amazon-s3/", "https://segment.com/docs/destinations/amazon-kinesis/"],
-    "description": "SegmentIO",
-    "id": "107630771604"
-  }, {
-    "owner": "SegmentIO",
-    "source": ["https://segment.com/docs/destinations/amazon-s3/", "https://segment.com/docs/destinations/amazon-kinesis/"],
-    "description": "SegmentIO",
-    "id": "595280932656"
-  }, {
-    "owner": "StackDriver",
-    "source": "https://web.archive.org/web/20150423044518/https://support.stackdriver.com/customer/portal/articles/1491790-setting-up-stackdriver-for-your-aws-account",
-    "description": "StackDriver",
-    "id": "314658760392"
-  }, {
-    "owner": "Crowdstrike",
-    "source": "https://www.crowdstrike.com/falcon/2020/wp-content/uploads/2020/10/Crowdstrike-AWS-ControlTower-Implementation-Guide.pdf",
-    "description": "Crowdstrike Falcon",
-    "id": "292230061137"
-  }, {
-    "owner": "Zencoder",
-    "source": "https://support.brightcove.com/using-zencoder-s3",
-    "description": "The Performance Leader in File Cloud Encoding",
-    "id": "395540211253"
-  }, {
-    "owner": "Datadog",
-    "source": "https://docs.datadoghq.com/integrations/amazon_web_services/",
-    "description": "Datadog is a monitoring service for cloud-scale applications, providing monitoring of servers, databases, tools, and services, through a SaaS-based data analytics platform.",
-    "id": "464622532012"
-  }, {
-    "owner": "Cloudability",
-    "source": "https://github.com/edrans/tf-aws-iam-cloudability",
-    "description": "Cloudability is a cloud cost management platform that improves visibility, optimization, governance and more across cloud environments.",
-    "id": "165736516723"
-  }, {
-    "owner": "Rackspace",
-    "source": "https://manage.rackspace.com/aws/docs/product-guide/patching/ec2/meltdown.html",
-    "description": "Rackspace Inc. is an American managed cloud computing company based in Windcrest, Texas, a suburb of San Antonio.",
-    "id": "507897595701"
-  }, {
-    "owner": "New Relic",
-    "source": ["https://docs.newrelic.com/docs/integrations/amazon-integrations/get-started/connect-aws-services-infrastructure", "https://docs.newrelic.com/docs/infrastructure/new-relic-infrastructure/data-instrumentation/amazon-aws-ec2-integration-infrastructure"],
-    "description": "New Relic is an American software analytics company based in San Francisco, California.",
-    "id": "754728514883"
-  }, {
-    "owner": "New Relic",
-    "source": ["https://docs.newrelic.com/docs/integrations/amazon-integrations/get-started/connect-aws-services-infrastructure", "https://docs.newrelic.com/docs/infrastructure/new-relic-infrastructure/data-instrumentation/amazon-aws-ec2-integration-infrastructure"],
-    "description": "New Relic is an American software analytics company based in San Francisco, California.",
-    "id": "017663287629"
-  }, {
-    "owner": "Brightcove",
-    "source": "https://support.brightcove.com/using-dynamic-ingest-s3",
-    "description": "Brightcove, Inc. is a Boston, Massachusetts–based software company that produces an online video platform.",
-    "id": "749779118921"
-  }, {
-    "owner": "CloudCheckr",
-    "source": "https://support.cloudcheckr.com/cloudcheckr-api-userguide/cloudcheckr-admin-api-reference-guide/",
-    "description": "CloudCheckr's cloud management platform provides cost management, security, reporting and analytics to help users optimize their AWS and Azure environments.",
-    "id": "352813966189"
-  }, {
-    "owner": "SignifAI",
-    "source": "https://docs.signifai.io/docs/amazon-web-services",
-    "description": "Predict and prevent downtime with artificial intelligence and machine learning for Site Reliability Engineers.",
-    "id": "265975144233"
-  },
-  {
-    "owner": "AlertLogic US",
-    "source":"https://docs.alertlogic.com/prepare/iam-role-creation.htm", 
-     "description": "Alert Logic: Managed Detection and Response (MDR) Company",
-    "id": "733251395267"
-  }, 
-  {
-    "owner": "AlertLogic EU",
-    "source":"https://docs.alertlogic.com/prepare/iam-role-creation.htm", 
-     "description": "Alert Logic: Managed Detection and Response (MDR) Company",
-    "id": "857795874556"
-  }, 
-  {
-    "owner": "ParkMyCloud",
-    "source": "https://parkmycloud.atlassian.net/wiki/spaces/PMCUG/pages/43876427/Create+an+IAM+Role+in+AWS+for+ParkMyCloud",
-     "description": "ParkMyCloud, a Turbonomic company, provides an easy-to-use platform that helps enterprises automatically identify and eliminate wasted cloud spend.",
-    "id": "753542375798"
-  }, {
-    "owner": "CenturyLinkCloud",
-    "source": "https://www.ctl.io/knowledge-base/cloud-application-manager/deploying-anywhere/using-your-aws-account/",
-    "description": "Centurylink Cloud offers secure enterprise cloud services ideal for business apps, IaaS, PaaS, SaaS, DBaaS and cloud management in a single platform.",
-    "id": "540339316802"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - US East (N. Virginia) - us-east-1",
-    "id": "127311923021"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - US East (Ohio) - us-east-2",
-    "id": "033677994240"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - US West (N. California) - us-west-1",
-    "id": "027434742980"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - US West (Oregon) - us-west-2",
-    "id": "797873946194"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - Canada (Central) - ca-central-1",
-    "id": "985666609251"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - EU (Frankfurt) - eu-central-1",
-    "id": "054676820928"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - EU (Ireland) - eu-west-1",
-    "id": "156460612806"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - EU (London) - eu-west-2",
-    "id": "652711504416"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - EU (Paris) - eu-west-3",
-    "id": "009996457667"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Tokyo) - ap-northeast-1",
-    "id": "582318560864"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Seoul) - ap-northeast-2",
-    "id": "600734575887"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Osaka-Local) - ap-northeast-3",
-    "id": "383597477331"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Singapore) - ap-southeast-1",
-    "id": "114774131450"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Sydney) - ap-southeast-2",
-    "id": "783225319266"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - Asia Pacific (Mumbai) - ap-south-1",
-    "id": "718504428378"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - South America (São Paulo) - sa-east-1",
-    "id": "507241528517"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - AWS GovCloud (US-West) - us-gov-west-1",
-    "id": "048591011584"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - China (Beijing) - cn-north-1",
-    "id": "638102146993"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html",
-    "description": "Elastic Load Balancing (ELB) - China (Ningxia) - cn-northwest-1",
-    "id": "037604701340"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "193672423079"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "391106570357"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "262260360010"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "902366379725"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "865932855811"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "760740231472"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "361669875840"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "762762565011"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "404641285394"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "660998842044"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "907379612154"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "053454850223"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "210876761215"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "307160386991"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "915173422425"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html",
-    "description": "Redshift logs",
-    "id": "075028567923"
-  }, {
-    "owner": "Amazon Web Services",
-    "description": "Cloudfront logs",
-    "id": "cloudfront"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html",
-    "description": "Example Canonical User ID",
-    "id": "79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html",
-    "description": "Anonymous Canonical User ID",
-    "id": "65a011a29cdf8ec533ec3d1ccaae921c"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html",
-    "description": "AWS Log Delivery Canonical User ID",
-    "id": "c4c1ede66af53448b93c283ce9448c4ba468c9432aa01d700d3878632f77d2d0"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-getting-started.html#step-2",
-    "description": "AWS ZA_Team Canonical User ID",
-    "id": "6aa5a366c34c1cbe25dc49211496e913e0351eb0e8c37aa3477e40942ec6b97c"
-  }, {
-    "owner": "Amazon Web Services",
-    "source": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-getting-started.html#step-2",
-    "description": "Billing",
-    "id": "386209384616"
-  }, {
-    "owner": "Dome9",
-    "source": "http://support.dome9.com/knowledgebase/articles/796419-convert-dome9-aws-account-connection-from-iam-user",
-    "description": "Dome9 delivers full visibility, control and faster time to protection as organizations scale in AWS, Azure and Google Cloud environments.",
-    "id": "634729597623"
-  }, {
-    "owner": "Google",
-    "source": "https://support.stackdriver.com/customer/portal/articles/1491790-setting-up-stackdriver-for-your-aws-account",
-    "description": "Stackdriver aggregates metrics, logs, and events from infrastructure, giving developers and operators a rich set of observable signals that speed root-cause analysis and reduce mean time to resolution (MTTR).",
-    "id": "314658760392"
-  }, {
-    "owner": "Skeddly",
-    "source": "http://thecloudmarket.com/owner/478299826944",
-    "description": "Skeddly schedules and automates your cloud resources on Amazon Web Services, Microsoft Azure, and Google Cloud Platform.",
-    "id": "478299826944"
-  }, {
-    "owner": "Freshservice",
-    "source": "https://support.freshservice.com/support/solutions/articles/207515-creating-a-role-arn-for-integrating-amazon-web-services-aws-in-freshservice",
-    "description": "Cloud based ITSM software for your service desk",
-    "id": "618708667954"
-  }, {
-    "owner": "SignalFx",
-    "source": "https://signalfx-product-docs.readthedocs-hosted.com/en/latest/getting-started/send-data.html",
-    "description": "SignalFx is the only real-time cloud monitoring platform for infrastructure, microservices, and applications.",
-    "id": "134183635603"
-  }, {
-    "owner": "CloudSploit",
-    "source": "https://cloudsploit.freshdesk.com/support/solutions/articles/17000008755-connecting-an-aws-account-to-cloudsploit",
-    "description": "CloudSploit's open-source cloud security scans find misconfigurations and security risks, allowing for mitigation before a compromise.",
-    "id": "057012691312"
-  }, {
-    "owner": "Globus",
-    "source": "https://docs.globus.org/how-to/amazon-aws-s3-endpoints/",
-    "description": "Research data management simplified.",
-    "id": "328067584297"
-  }, {
-    "owner": "Dynatrace",
-    "source": "https://help.dynatrace.com/monitor-cloud-virtualization-and-hosts/cloud/how-do-i-start-amazon-web-services-monitoring/",
-    "description": "Dynatrace is a software intelligence company providing application performance management, artificial intelligence for operations, cloud infrastructure monitoring, and digital experience management, with products for the information technology departments and digital business owners of medium and large businesses.",
-    "id": "509560245411"
-  }, {
-    "owner": "Deep Security",
-    "source": "https://esupport.trendmicro.com/media/13166096/Generate-AWS-Role.pdf",
-    "description": "Trend Micro's Deep Security is an intelligent data protection solution that services all environments and was built purposefully to support VMware deployments.",
-    "id": "862820443276"
-  }, {
-    "owner": "Cloudbreak",
-    "source": "https://github.com/hortonworks/cloudbreak",
-    "description": "A tool for provisioning and managing Apache Hadoop clusters in the cloud.",
-    "id": "755047402263"
-  }, {
-    "owner": "Teraproc",
-    "source": "http://www.teraproc.com/awskey/",
-    "description": "Teraproc Cloud Manager is a complete solution of managing a heterogeneous cloud computing environment.",
-    "id": "122931797421"
-  }, {
-    "owner": "Orbitera",
-    "source": "https://support.orbitera.com/support/solutions/articles/147040-add-new-aws-accounts",
-    "description": "The Cloud Commerce Platform",
-    "id": "328676173091"
-  }, {
-    "owner": "RedLine13",
-    "source": "https://www.redline13.com/blog/aws-setup/",
-    "description": "Open Architecture for Building and Running Load Tests",
-    "id": "635144173025"
-  }, {
-    "owner": "Kochava",
-    "source": "https://support.kochava.com/reference-information/traffic-import-tool",
-    "description": "Kochava is the industry leader for mobile app attribution and mobile app analytics. ",
-    "id": "719465667078"
-  }, {
-    "owner": "Instaclustr",
-    "source": "https://support.instaclustr.com/hc/en-us/articles/226565607-Setting-Up-a-Datacenter-with-EBS-Encryption",
-    "description": "Managed and supported open source solutions for Apache Cassandra, Apache Kafka, Apache Spark, Elasticsearch, Apache Zeppelin, Kibana etc",
-    "id": "624537489435"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "475085895292"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "086441151436"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "388731089494"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "113285607260"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "819402241893"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "977081816279"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "765225791966"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "492519147666"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "903692715234"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "284668455005"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "216624486486"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "681348832753"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "035351147821"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "859597730677"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "282025262664"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "262312530599"
-  }, {
-    "owner": "CloudTrail",
-    "source": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html",
-    "description": "CloudTrail",
-    "id": "814480443879"
-  }, {
-    "owner": "Summit Route",
-    "source": "https://summitroute.com/aws_security_assessments/",
-    "description": "Summit Route",
-    "id": "393727464233"
-  }, {
-    "owner": "TrendMicro",
-    "source": "https://help.deepsecurity.trendmicro.com/Add-Computers/add-aws.html",
-    "description": "TrendMicro",
-    "id": "147995105371"
-  }, {
-    "owner": "Convox",
-    "source": "https://convox.com/docs/aws-integration",
-    "description": "Convox",
-    "id": "665986001363"
-  }, {
-    "owner": "Spotinst",
-    "source": "https://help.spotinst.com/hc/en-us/articles/360000343509-Functions-Permissions-Model-IAM-Role-",
-    "description": "Spotinst",
-    "id": "922761411349"
-  }, {
-    "owner": "Prisma",
-    "source": "https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-aws-account/set-up-your-prisma-cloud-role-for-aws-manual.html", 
-    "description": "Prisma Cloud",
-    "id": "188619942792"
-  }, {
-    "owner": "Sumo Logic",
-    "source": "https://help.sumologic.com/03Send-Data/sources/02sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product#IAM_Role",
-    "description": "Account belonging to Sumo Logic used for ingestion of logs from customers' AWS accounts",
-    "id": "926226587429"
-  }, {
-    "owner": "Bridgecrew",
-    "description": "Bridgecrew",
-    "id": "890234264427"
-  }, {
-    "owner": "Lacework",
-    "description": "Lacework",
-    "id": "434813966438"
-  }, {
-    "owner": "Onelogin",
-    "description": "Onelogin",
-    "id": "842984801698"
-  }, {
-    "owner": "nOps",
-    "source": "https://help.nops.io/manual_setup",
-    "description": "nOps",
-    "id": "202279780353"
-  }, {
-    "owner": "Fivetran",
-    "source": "https://fivetran.com/docs/logs/cloudwatch/setup-guide",
-    "description": "Fivetran",
-    "id": "834469178297"
-  }, {
-    "owner": "Databricks",
-    "source": "https://docs.databricks.com/administration-guide/account-settings/aws-accounts.html",
-    "description": "Databricks",
-    "id": "414351767826"
-  }, {
-    "owner": "Threat Stack",
-    "source": "https://threatstack.zendesk.com/hc/en-us/articles/206006626-AWS-EC2-Integration",
-    "description": "Threat Stack",
-    "id": "896126563706"
-  }, {
-    "owner": "JupiterOne",
-    "source": "https://github.com/JupiterOne/jupiterone-aws-cloudformation/commit/0adf947dc98404cef1eee1f570f39c05c87d3f41",
-    "description": "JupiterOne",
-    "id": "612791702201"
-  }, {
-    "owner": "Rapid7",
-    "source": "https://insightvm.help.rapid7.com/docs/aws-connect-to-cloud-configuration-assessment",
-    "description": "Rapid7 InsightVM Cloud Configuration",
-    "id": "336818582268"
-  }]
+[
+    {
+        "id": "454464851268",
+        "owner": "Cloudhealth",
+        "source": [
+            "https://github.com/mozilla/security/blob/master/operations/cloudformation-templates/cloudhealth_iam_role.json"
+        ],
+        "description": ""
+    },
+    {
+        "id": "107630771604",
+        "owner": "SegmentIO",
+        "source": [
+            "https://segment.com/docs/destinations/amazon-s3/",
+            "https://segment.com/docs/destinations/amazon-kinesis/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "595280932656",
+        "owner": "SegmentIO",
+        "source": [
+            "https://segment.com/docs/destinations/amazon-s3/",
+            "https://segment.com/docs/destinations/amazon-kinesis/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "314658760392",
+        "owner": "StackDriver",
+        "source": [
+            "https://web.archive.org/web/20150423044518/https://support.stackdriver.com/customer/portal/articles/1491790-setting-up-stackdriver-for-your-aws-account",
+            "https://support.stackdriver.com/customer/portal/articles/1491790-setting-up-stackdriver-for-your-aws-account"
+        ],
+        "description": ""
+    },
+    {
+        "id": "395540211253",
+        "owner": "Zencoder",
+        "source": [
+            "https://support.brightcove.com/using-zencoder-s3"
+        ],
+        "description": ""
+    },
+    {
+        "id": "464622532012",
+        "owner": "Datadog",
+        "source": [
+            "https://docs.datadoghq.com/integrations/guide/aws-manual-setup/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "165736516723",
+        "owner": "Cloudability",
+        "source": [
+            "https://github.com/edrans/tf-aws-iam-cloudability",
+            "https://developers.cloudability.com/docs/vendor-credentials-end-point"
+        ],
+        "description": ""
+    },
+    {
+        "id": "507897595701",
+        "owner": "Rackspace",
+        "source": [
+            "https://manage.rackspace.com/aws/docs/product-guide/patching/ec2/meltdown.html",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "530014582677",
+        "owner": "Rackspace",
+        "source": [
+            "https://manage.rackspace.com/aws/docs/product-guide/patching/ec2/meltdown.html",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "754728514883",
+        "owner": "New Relic",
+        "source": [
+            "https://docs.newrelic.com/docs/integrations/amazon-integrations/get-started/connect-aws-services-infrastructure",
+            "https://docs.newrelic.com/docs/infrastructure/new-relic-infrastructure/data-instrumentation/amazon-aws-ec2-integration-infrastructure"
+        ],
+        "description": ""
+    },
+    {
+        "id": "017663287629",
+        "owner": "New Relic",
+        "source": [
+            "https://docs.newrelic.com/docs/integrations/amazon-integrations/get-started/connect-aws-services-infrastructure",
+            "https://docs.newrelic.com/docs/infrastructure/new-relic-infrastructure/data-instrumentation/amazon-aws-ec2-integration-infrastructure"
+        ],
+        "description": ""
+    },
+    {
+        "id": "749779118921",
+        "owner": "Brightcove",
+        "source": [
+            "https://support.brightcove.com/using-dynamic-ingest-s3"
+        ],
+        "description": ""
+    },
+    {
+        "id": "352813966189",
+        "owner": "CloudCheckr",
+        "source": [
+            "https://support.cloudcheckr.com/cloudcheckr-api-userguide/cloudcheckr-admin-api-reference-guide/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "265975144233",
+        "owner": "SignifAI",
+        "source": [
+            "https://docs.signifai.io/docs/amazon-web-services"
+        ],
+        "description": ""
+    },
+    {
+        "id": "753542375798",
+        "owner": "ParkMyCloud",
+        "source": [
+            "https://parkmycloud.atlassian.net/wiki/spaces/PMCUG/pages/43876427/Create+an+IAM+Role+in+AWS+for+ParkMyCloud"
+        ],
+        "description": ""
+    },
+    {
+        "id": "540339316802",
+        "owner": "CenturyLinkCloud",
+        "source": [
+            "https://www.ctl.io/knowledge-base/cloud-application-manager/deploying-anywhere/using-your-aws-account/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "127311923021",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "033677994240",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "027434742980",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "797873946194",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "985666609251",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "054676820928",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "156460612806",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "652711504416",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "009996457667",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "582318560864",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "600734575887",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "383597477331",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "114774131450",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "783225319266",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "718504428378",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "507241528517",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "048591011584",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "638102146993",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "037604701340",
+        "owner": "ELB logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "193672423079",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "391106570357",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "262260360010",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "902366379725",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "865932855811",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "760740231472",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "361669875840",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "762762565011",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "404641285394",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "660998842044",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "907379612154",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "053454850223",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "210876761215",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "307160386991",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "915173422425",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "075028567923",
+        "owner": "Redshift logsaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "386209384616",
+        "owner": "Billingaws",
+        "source": [
+            "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-getting-started.html#step-2"
+        ],
+        "description": ""
+    },
+    {
+        "id": "478299826944",
+        "owner": "skeddly",
+        "source": [
+            "http://thecloudmarket.com/owner/478299826944"
+        ],
+        "description": ""
+    },
+    {
+        "id": "618708667954",
+        "owner": "freshservice",
+        "source": [
+            "https://support.freshservice.com/support/solutions/articles/207515-creating-a-role-arn-for-integrating-amazon-web-services-aws-in-freshservice"
+        ],
+        "description": ""
+    },
+    {
+        "id": "134183635603",
+        "owner": "signalfx",
+        "source": [
+            "https://signalfx-product-docs.readthedocs-hosted.com/en/latest/getting-started/send-data.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "057012691312",
+        "owner": "cloudsploit",
+        "source": [
+            "https://cloudsploit.freshdesk.com/support/solutions/articles/17000008755-connecting-an-aws-account-to-cloudsploit"
+        ],
+        "description": ""
+    },
+    {
+        "id": "978540733285",
+        "owner": "Aqua",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "328067584297",
+        "owner": "globus",
+        "source": [
+            "https://docs.globus.org/how-to/amazon-aws-s3-endpoints/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "509560245411",
+        "owner": "dynatrace",
+        "source": [
+            "https://help.dynatrace.com/monitor-cloud-virtualization-and-hosts/cloud/how-do-i-start-amazon-web-services-monitoring/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "862820443276",
+        "owner": "Trend Micro deepsecurity",
+        "source": [
+            "https://esupport.trendmicro.com/media/13166096/Generate-AWS-Role.pdf",
+            "https://help.deepsecurity.trendmicro.com/Add-Computers/add-aws.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "147995105371",
+        "owner": "Trend Micro deepsecurity",
+        "source": [
+            "https://esupport.trendmicro.com/media/13166096/Generate-AWS-Role.pdf",
+            "https://help.deepsecurity.trendmicro.com/Add-Computers/add-aws.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "755047402263",
+        "owner": "cloudbreak",
+        "source": [
+            "https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_cldbrk_install/bk_CLBK_IAG/content/clbk_iam_console.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "122931797421",
+        "owner": "teraproc",
+        "source": [
+            "http://www.teraproc.com/awskey/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "328676173091",
+        "owner": "orbitera",
+        "source": [
+            "https://support.orbitera.com/support/solutions/articles/147040-add-new-aws-accounts"
+        ],
+        "description": ""
+    },
+    {
+        "id": "635144173025",
+        "owner": "redline13",
+        "source": [
+            "https://www.redline13.com/blog/aws-setup/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "719465667078",
+        "owner": "kochava",
+        "source": [
+            "https://support.kochava.com/reference-information/traffic-import-tool"
+        ],
+        "description": ""
+    },
+    {
+        "id": "624537489435",
+        "owner": "instaclustr",
+        "source": [
+            "https://support.instaclustr.com/hc/en-us/articles/226565607-Setting-Up-a-Datacenter-with-EBS-Encryption"
+        ],
+        "description": ""
+    },
+    {
+        "id": "475085895292",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "086441151436",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "388731089494",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "113285607260",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "819402241893",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "977081816279",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "765225791966",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "492519147666",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "903692715234",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "284668455005",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "216624486486",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "681348832753",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "035351147821",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "859597730677",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "282025262664",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "262312530599",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "814480443879",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "525921808201",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "119688915426",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "582488909970",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "069019280451",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "187074758985",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "193415116832",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "453052556044",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "829690693026",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "669305197877",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "757211635381",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "585772288577",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "034638983726",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "886388586500",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "608710470296",
+        "owner": "CloudTrailaws",
+        "source": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "393727464233",
+        "owner": "Summit Route",
+        "source": [
+            "https://summitroute.com/aws_security_assessments/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "124790101291",
+        "owner": "TrendMicro",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "607237235771",
+        "owner": "TrendMicro",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "675681123645",
+        "owner": "TrendMicro",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "811620960246",
+        "owner": "TrendMicro",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "868324285112",
+        "owner": "TrendMicro",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "665986001363",
+        "owner": "Convox",
+        "source": [
+            "https://convox.com/docs/aws-integration"
+        ],
+        "description": ""
+    },
+    {
+        "id": "922761411349",
+        "owner": "Spotinst",
+        "source": [
+            "https://help.spotinst.com/hc/en-us/articles/360000343509-Functions-Permissions-Model-IAM-Role-"
+        ],
+        "description": ""
+    },
+    {
+        "id": "188619942792",
+        "owner": "Redlock - PrismaCloud",
+        "source": [
+            "https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-aws/manually-set-up-prisma-cloud-role-for-aws",
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "496947949261",
+        "owner": "Redlock - PrismaCloud",
+        "source": [
+            "https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-aws/manually-set-up-prisma-cloud-role-for-aws",
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "926226587429",
+        "owner": "Sumo Logic",
+        "source": [
+            "https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product"
+        ],
+        "description": ""
+    },
+    {
+        "id": "890234264427",
+        "owner": "Bridgecrew",
+        "source": [
+            "https://bridgecrew.cloud"
+        ],
+        "description": ""
+    },
+    {
+        "id": "434813966438",
+        "owner": "Lacework",
+        "source": [
+            "https://support.lacework.com/hc/en-us/articles/360017546933-Getting-Started"
+        ],
+        "description": ""
+    },
+    {
+        "id": "842984801698",
+        "owner": "Onelogin",
+        "source": [
+            "https://onelogin.service-now.com/kb_view_customer.do?sysparm_article=KB0010344"
+        ],
+        "description": ""
+    },
+    {
+        "id": "202279780353",
+        "owner": "nOps",
+        "source": [
+            "https://help.nops.io/manual_setup"
+        ],
+        "description": ""
+    },
+    {
+        "id": "834469178297",
+        "owner": "Fivetran",
+        "source": [
+            "https://fivetran.com/docs/logs/cloudwatch/setup-guide"
+        ],
+        "description": ""
+    },
+    {
+        "id": "336818582268",
+        "owner": "Rapid7",
+        "source": [
+            "https://insightvm.help.rapid7.com/docs/aws-connect-to-cloud-configuration-assessment"
+        ],
+        "description": ""
+    },
+    {
+        "id": "414351767826",
+        "owner": "Databricks",
+        "source": [
+            "https://docs.databricks.com/administration-guide/account-settings/aws-accounts.html",
+            "https://docs.databricks.com/sql/admin/data-access-configuration.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "790110701330",
+        "owner": "Databricks",
+        "source": [
+            "https://docs.databricks.com/administration-guide/account-settings/aws-accounts.html",
+            "https://docs.databricks.com/sql/admin/data-access-configuration.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "896126563706",
+        "owner": "Threat Stack",
+        "source": [
+            "https://threatstack.zendesk.com/hc/en-us/articles/206006626-AWS-EC2-Integration"
+        ],
+        "description": ""
+    },
+    {
+        "id": "799803075172",
+        "owner": "Lucidchart",
+        "source": [
+            "https://lucidchart.zendesk.com/hc/en-us/articles/208018563-Create-an-IAM-User-or-a-Cross-Account-Role-in-AWS-for-Lucidchart"
+        ],
+        "description": ""
+    },
+    {
+        "id": "353360065216",
+        "owner": "Workato",
+        "source": [
+            "https://docs.workato.com/connectors/s3.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "122442690527",
+        "owner": "Palo Alto Networks",
+        "source": [
+            "https://github.com/terraform-providers/terraform-provider-aws/issues/6674"
+        ],
+        "description": ""
+    },
+    {
+        "id": "061190967865",
+        "owner": "CloudZero",
+        "source": [
+            "https://www.cloudzero.com/hubfs/CloudZero%20Configuration%20Guide%20-%20Automated.pdf"
+        ],
+        "description": ""
+    },
+    {
+        "id": "232482882421",
+        "owner": "Cloudinary",
+        "source": [
+            "https://support.cloudinary.com/hc/en-us/articles/203276521-How-do-I-allow-Cloudinary-to-read-from-my-private-S3-bucket-"
+        ],
+        "description": ""
+    },
+    {
+        "id": "012615275169",
+        "owner": "Tenable",
+        "source": [
+            "https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/Connectors_ConfigureAWS_KeylessAutoDiscovery.htm",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "422820575223",
+        "owner": "Tenable",
+        "source": [
+            "https://docs.tenable.com/tenableio/vulnerabilitymanagement/Content/Settings/Connectors_ConfigureAWS_KeylessAutoDiscovery.htm",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "218546966473",
+        "owner": "Stitch",
+        "source": [
+            "https://www.stitchdata.com/docs/destinations/amazon-s3/connecting-an-amazon-s3-data-warehouse-to-stitch"
+        ],
+        "description": ""
+    },
+    {
+        "id": "884047677700",
+        "owner": "Emnify",
+        "source": [
+            "https://www.emnify.com/datastreamer-integration-into-aws"
+        ],
+        "description": ""
+    },
+    {
+        "id": "080595016317",
+        "owner": "Qualys Cloud View",
+        "source": [
+            "https://qualysguard.qualys.com/qwebhelp/fo_portal/scans/ec2_connector.htm"
+        ],
+        "description": ""
+    },
+    {
+        "id": "205767712438",
+        "owner": "Qualys Cloud View",
+        "source": [
+            "https://qualysguard.qualys.com/qwebhelp/fo_portal/scans/ec2_connector.htm"
+        ],
+        "description": ""
+    },
+    {
+        "id": "951887872838",
+        "owner": "Auth0",
+        "source": [
+            "https://auth0.com/docs/integrations/aws/sso"
+        ],
+        "description": ""
+    },
+    {
+        "id": "062663104137",
+        "owner": "Altus",
+        "source": [
+            "https://blog.cloudera.com/cloudera-altus-cloud-services-youre-in-control-part-2/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "239734009475",
+        "owner": "AlertLogic",
+        "source": [
+            "https://docs.alertlogic.com/prepare/iam-role-creation.htm#top"
+        ],
+        "description": ""
+    },
+    {
+        "id": "733251395267",
+        "owner": "AlertLogic",
+        "source": [
+            "https://docs.alertlogic.com/prepare/iam-role-creation.htm#top"
+        ],
+        "description": ""
+    },
+    {
+        "id": "857795874556",
+        "owner": "AlertLogic",
+        "source": [
+            "https://docs.alertlogic.com/prepare/iam-role-creation.htm#top"
+        ],
+        "description": ""
+    },
+    {
+        "id": "717210094962",
+        "owner": "CloudConformity",
+        "source": [
+            "https://github.com/cloudconformity/documentation-api/blob/master/Accounts.md#update-account"
+        ],
+        "description": ""
+    },
+    {
+        "id": "854209929931",
+        "owner": "Fortinet",
+        "source": [
+            "https://fortinetweb.s3.amazonaws.com/docs.fortinet.com/v2/attachments/bf017449-572a-11e9-81a4-00505692583a/forticasb-4.1.0-admin-guide.pdf",
+            "https://docs.fortinet.com/document/forticwp/4.4.0/online-help/828941/amazon-web-services"
+        ],
+        "description": ""
+    },
+    {
+        "id": "197857026523",
+        "owner": "Azure Sentinel",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "432263259397",
+        "owner": "Azure Billing Management",
+        "source": [
+            "https://docs.microsoft.com/en-us/azure/cost-management/aws-integration-manage"
+        ],
+        "description": ""
+    },
+    {
+        "id": "835822366011",
+        "owner": "ADC Application Deployment, ADM Delivery Management",
+        "source": [
+            "https://docs.citrix.com/en-us/citrix-application-delivery-management-service/hybrid-multi-cloud-deployments/autoscale-for-aws/autoscale-for-aws-configuration.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "695990169366",
+        "owner": "CloudManager for CloudVolumes",
+        "source": [
+            "https://docs.netapp.com/us-en/cloud_volumes/aws/media/cvs_aws_account_setup.pdf"
+        ],
+        "description": ""
+    },
+    {
+        "id": "802876684602",
+        "owner": "Axonius.com",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "817364327683",
+        "owner": "Axonius.com",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "405773942477",
+        "owner": "Axonius.com",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "370134896156",
+        "owner": "Fugue",
+        "source": [
+            "https://docs.fugue.co/setup.html",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "944830124550",
+        "owner": "Fugue",
+        "source": [
+            "https://docs.fugue.co/setup.html",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "057172825058",
+        "owner": "Fugue",
+        "source": [
+            "https://docs.fugue.co/setup.html",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "810369035479",
+        "owner": "Fugue",
+        "source": [
+            "https://docs.fugue.co/setup.html",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "863002038009",
+        "owner": "CloudPhysics",
+        "source": [
+            "https://www.cloudphysics.com/connectaws/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "429269239926",
+        "owner": "QRadar",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "282028653949",
+        "owner": "LogicMonitor",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "307653271100",
+        "owner": "MVision ePO",
+        "source": [
+            "https://docs.mcafee.com/bundle/prod-name-n.n.x-guide-type/page/GUID-9B6E696A-78DA-4F41-A0FC-39699DD39639.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "754237914691",
+        "owner": "Symantec Cloud Workload Protection",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "033496790460",
+        "owner": "Symantec Cloud Workload Protection",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "406095609952",
+        "owner": "Logz.io",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "178591426237",
+        "owner": "Xi Frame",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "270852171095",
+        "owner": "CloudWisdom, metricly",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "216690786812",
+        "owner": "Rockset",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "545334166883",
+        "owner": "CloudHiro",
+        "source": [
+            "https://cloudhiro.com/AWS/AWSRegistrationGuide.php"
+        ],
+        "description": ""
+    },
+    {
+        "id": "036437403198",
+        "owner": "Densify",
+        "source": [
+            "https://www.densify.com/docs/Content/Data_Collection_for_Public_Cloud_Systems/AWS_Data_Collection_Prerequisites_for_an_IAM_Role.htm"
+        ],
+        "description": ""
+    },
+    {
+        "id": "679703615338",
+        "owner": "Armor Anywhere",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html",
+            "https://docs.armor.com/pages/viewpage.action?pageId=20709565"
+        ],
+        "description": ""
+    },
+    {
+        "id": "345186984524",
+        "owner": "Armor Anywhere",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html",
+            "https://docs.armor.com/pages/viewpage.action?pageId=20709565"
+        ],
+        "description": ""
+    },
+    {
+        "id": "765628985471",
+        "owner": "Genys",
+        "source": [
+            "https://help.mypurecloud.com/articles/create-iam-resources-to-invoke-an-aws-lambda-function/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "949777495771",
+        "owner": "site24x7",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "710193521658",
+        "owner": "ylastic",
+        "source": [
+            "https://blog.ylastic.com/post/153943542476/iam-role-with-external-id-for-cross-account-access"
+        ],
+        "description": ""
+    },
+    {
+        "id": "805246085872",
+        "owner": "qubole",
+        "source": [
+            "https://docs.qubole.com/en/latest/user-guide/managing-accounts/aws/iam-roles/override-iam-roles.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "200235630647",
+        "owner": "VManage",
+        "source": [
+            "https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/Network-Optimization-and-High-Availability/Network-Optimization-High-Availability-book/b_Network-Optimization-and-HA_chapter_00.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "814021343637",
+        "owner": "Cloudaware",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "558211695259",
+        "owner": "Cloud Ranger",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "843529240033",
+        "owner": "FoxPass",
+        "source": [
+            "https://docs.foxpass.com/docs/access-control-integration-with-amazon-ec2"
+        ],
+        "description": ""
+    },
+    {
+        "id": "094919933512",
+        "owner": "Nirmata",
+        "source": [
+            "https://nirmata-documentation.readthedocs.io/en/latest/CloudProviders.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "855262394183",
+        "owner": "GitLab",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "956491294349",
+        "owner": "GitLab",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "198361731867",
+        "owner": "Snyk",
+        "source": [
+            "https://support.snyk.io/hc/en-us/articles/360004002418-AWS-Lambda-integration",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "755778135062",
+        "owner": "Snyk",
+        "source": [
+            "https://support.snyk.io/hc/en-us/articles/360004002418-AWS-Lambda-integration",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "968898580625",
+        "owner": "CloudCraft",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "612791702201",
+        "owner": "JupiterOne",
+        "source": [
+            "https://github.com/JupiterOne/jupiterone-aws-cloudformation/commit/c9abbbcc3e29474c6605a6f8ace5ec0ff475d3f8"
+        ],
+        "description": ""
+    },
+    {
+        "id": "414502572119",
+        "owner": "rev.com",
+        "source": [
+            "https://www.rev.com/api/s3bucketpolicy"
+        ],
+        "description": ""
+    },
+    {
+        "id": "071303700930",
+        "owner": "Funnel",
+        "source": [
+            "https://help.funnel.io/en/articles/1494351-amazon-s3-bucket-configuration"
+        ],
+        "description": ""
+    },
+    {
+        "id": "339405024189",
+        "owner": "Domo",
+        "source": [
+            "https://knowledge.domo.com/Connect/Connecting_to_Data_with_Connectors/Configuring_Each_Connector/Connectors_for_File_Retrieval/Amazon_S3_AssumeRole_Connector"
+        ],
+        "description": ""
+    },
+    {
+        "id": "010251424122",
+        "owner": "Domo",
+        "source": [
+            "https://knowledge.domo.com/Connect/Connecting_to_Data_with_Connectors/Configuring_Each_Connector/Connectors_for_File_Retrieval/Amazon_S3_AssumeRole_Connector"
+        ],
+        "description": ""
+    },
+    {
+        "id": "687132894031",
+        "owner": "Domo",
+        "source": [
+            "https://knowledge.domo.com/Connect/Connecting_to_Data_with_Connectors/Configuring_Each_Connector/Connectors_for_File_Retrieval/Amazon_S3_AssumeRole_Connector"
+        ],
+        "description": ""
+    },
+    {
+        "id": "622384692065",
+        "owner": "Domo",
+        "source": [
+            "https://knowledge.domo.com/Connect/Connecting_to_Data_with_Connectors/Configuring_Each_Connector/Connectors_for_File_Retrieval/Amazon_S3_AssumeRole_Connector"
+        ],
+        "description": ""
+    },
+    {
+        "id": "962727799805",
+        "owner": "Atlas DataLake",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "428641199958",
+        "owner": "Upsolver",
+        "source": [],
+        "description": ""
+    },
+    {
+        "id": "376248598259",
+        "owner": "Weave Cloud",
+        "source": [
+            "https://eksctl.io/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "515570774723",
+        "owner": "ChaosSearch",
+        "source": [
+            "https://docs.chaossearch.io/docs/prerequisites"
+        ],
+        "description": ""
+    },
+    {
+        "id": "305753120797",
+        "owner": "EDB Postgres",
+        "source": [
+            "https://www.enterprisedb.com/edb-docs/d/edb-postgres-ark-platform/user-guides/administrative-users-guide/3.0/EDB_Ark_Administrative_User_Guide.1.20.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "726941830086",
+        "owner": "TheGlobalSolutions.net",
+        "source": [
+            "http://www.theglobalsolutions.net/awspatching/saas_help.php"
+        ],
+        "description": ""
+    },
+    {
+        "id": "902500896138",
+        "owner": "wpengine",
+        "source": [
+            "https://wpengine.com/support/configuring-largefs-store-transfer-unlimited-data/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "759994998399",
+        "owner": "cloudsqueeze",
+        "source": [
+            "https://app.cloudsqueeze.ai/awsAddAccount"
+        ],
+        "description": ""
+    },
+    {
+        "id": "675479154635",
+        "owner": "ThingSpace",
+        "source": [
+            "https://thingspace.verizon.com/resources/documentation/cloudconnector/Getting_Started/Streaming_to_AWS/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "340481513670",
+        "owner": "Anodot",
+        "source": [
+            "https://support.anodot.com/hc/en-us/articles/360034553113-Enable-Reading-from-the-Kinesis-Stream"
+        ],
+        "description": ""
+    },
+    {
+        "id": "794878508631",
+        "owner": "MediaMath",
+        "source": [
+            "https://apidocs.mediamath.com/reporting/log-level-data-service/overview#data-security-and-authorization"
+        ],
+        "description": ""
+    },
+    {
+        "id": "118652503430",
+        "owner": "Presidio",
+        "source": [
+            "customer IAM policy"
+        ],
+        "description": ""
+    },
+    {
+        "id": "634729597623",
+        "owner": "Checkpoint Cloudguard",
+        "source": [
+            "https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk159912&partition=Basic&product=CloudGuard"
+        ],
+        "description": ""
+    },
+    {
+        "id": "568526795995",
+        "owner": "Cisco Umbrella",
+        "source": [
+            "https://docs.umbrella.com/umbrella-user-guide/docs/enable-logging-to-your-own-s3-bucket"
+        ],
+        "description": ""
+    },
+    {
+        "id": "391854517948",
+        "owner": "Cloudflare",
+        "source": [
+            "https://developers.cloudflare.com/logs/logpush/aws-s3"
+        ],
+        "description": ""
+    },
+    {
+        "id": "858827067514",
+        "owner": "[Deprecated] AWS Log delivery Service",
+        "source": [
+            "https://forums.aws.amazon.com/thread.jspa?messageID=629256"
+        ],
+        "description": ""
+    },
+    {
+        "id": "066549572091",
+        "owner": "Epsagon",
+        "source": [
+            "https://docs.epsagon.com/docs/faq"
+        ],
+        "description": ""
+    },
+    {
+        "id": "287590803701",
+        "owner": "Turbot",
+        "source": [
+            "https://turbot.com/v5/docs/integrations/aws/import-aws-account"
+        ],
+        "description": ""
+    },
+    {
+        "id": "255798382450",
+        "owner": "Turbot",
+        "source": [
+            "https://turbot.com/v5/docs/integrations/aws/import-aws-account"
+        ],
+        "description": ""
+    },
+    {
+        "id": "805950163170",
+        "owner": "Qualys AWS EC2 Connector",
+        "source": [
+            "https://qualys-secure.force.com/discussions/s/question/0D52L00004TnxTqSAJ/aws-ec2-connector-creation-automation"
+        ],
+        "description": ""
+    },
+    {
+        "id": "438908802199",
+        "owner": "Qualys",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "392220576650",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "718770453195",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "968246515281",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "109351309407",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "796887884028",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "631144002099",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "544388816663",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "061510835048",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "474240146802",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "166639821150",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "394634713161",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "753362059629",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "359345898052",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "969236854626",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "020402002396",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "195145609632",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "798376113853",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "652364314486",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "849137399833",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "507069717855",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "644042651268",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "174803364771",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "287228555773",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "855739686837",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "614065512851",
+        "owner": "API Gatewayaws",
+        "source": [
+            "https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-api-with-vpclink-accounts.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "152659312504",
+        "owner": "Slack EKM",
+        "source": [
+            "https://slackhq.com/dotcom/dotcom/wp-content/uploads/sites/6/2019/08/Slack-EKM-Implementation-Guide-1.pdf"
+        ],
+        "description": ""
+    },
+    {
+        "id": "429538831549",
+        "owner": "Slack EKM",
+        "source": [
+            "https://slackhq.com/dotcom/dotcom/wp-content/uploads/sites/6/2019/08/Slack-EKM-Implementation-Guide-1.pdf"
+        ],
+        "description": ""
+    },
+    {
+        "id": "316881668097",
+        "owner": "Steampipe Cloud",
+        "source": [
+            "https://cloud.steampipe.io/user/<USER-NAME>/create/connection"
+        ],
+        "description": ""
+    },
+    {
+        "id": "398997493752",
+        "owner": "unusd.cloud",
+        "source": [
+            "https://unusd-cloud-saas-prod-artifacts-spoke.s3.eu-west-1.amazonaws.com/spoke-role.yml"
+        ],
+        "description": ""
+    },
+    {
+        "id": "310957700191",
+        "owner": "CloudYali",
+        "source": [
+            "https://docs.cloudyali.io/docs/connecting_aws"
+        ],
+        "description": ""
+    },
+    {
+        "id": "423155938983",
+        "owner": "SSLMate",
+        "source": [
+            "https://sslmate.com/help/reference/misc#aws_integration"
+        ],
+        "description": ""
+    },
+    {
+        "id": "056196542512",
+        "owner": "SSLMate (Sandbox Site)",
+        "source": [
+            "https://sslmate.com/help/reference/misc#aws_integration"
+        ],
+        "description": ""
+    },
+    {
+        "id": "761931097553",
+        "owner": "Sysdig",
+        "source": [
+            "https://docs.sysdig.com/en/docs/administration/saas-regions-and-ip-ranges/#aws-account-ids"
+        ],
+        "description": ""
+    },
+    {
+        "id": "263844535661",
+        "owner": "Sysdig",
+        "source": [
+            "https://docs.sysdig.com/en/docs/administration/saas-regions-and-ip-ranges/#aws-account-ids"
+        ],
+        "description": ""
+    },
+    {
+        "id": "203796963081",
+        "owner": "MadKudu",
+        "source": [
+            "https://support.madkudu.com/hc/en-us/articles/360036908291-Amazon-S3-Giving-MadKudu-access-to-an-S3-bucket"
+        ],
+        "description": ""
+    },
+    {
+        "id": "913128560467",
+        "owner": "env0",
+        "source": [
+            "https://docs.env0.com/docs/aws-costs"
+        ],
+        "description": ""
+    },
+    {
+        "id": "032379705303",
+        "owner": "BuildKite (log output)",
+        "source": [
+            "https://buildkite.com/docs/pipelines/managing-log-output"
+        ],
+        "description": ""
+    },
+    {
+        "id": "324880187172",
+        "owner": "Spacelift",
+        "source": [
+            "https://docs.spacelift.io/integrations/cloud-providers/aws"
+        ],
+        "description": ""
+    },
+    {
+        "id": "826438284864",
+        "owner": "k9 security",
+        "source": [
+            "https://www.k9security.io/docs/how-to-configure-k9-access/",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "139710491120",
+        "owner": "k9 security",
+        "source": [
+            "https://www.k9security.io/docs/how-to-configure-k9-access/",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "720226181253",
+        "owner": "k9 security",
+        "source": [
+            "https://www.k9security.io/docs/how-to-configure-k9-access/",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "457424274508",
+        "owner": "Codeshield",
+        "source": [
+            "https://codeshield-public-templates-production.s3.eu-central-1.amazonaws.com/aws_connect_codeshield.yml"
+        ],
+        "description": ""
+    },
+    {
+        "id": "746108190720",
+        "owner": "OpsLevel",
+        "source": [
+            "https://docs.opslevel.com/docs/infrastructure"
+        ],
+        "description": ""
+    },
+    {
+        "id": "368064434614",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "790247189693",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "703715109447",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "473191095985",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "420376844563",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "651179539253",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "297058826802",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "623197973179",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "945512339897",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "408097707231",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "398671365691",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "713597048934",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "960118270566",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "485979073181",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "615915377779",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "764870610256",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "434091160558",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "246478207311",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "885798887673",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "041313461515",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "694668203235",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "553461782468",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "668912161003",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "028811157404",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "051362938876",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "595013617770",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "392442076723",
+        "owner": "Redshift loggingaws",
+        "source": [
+            "https://docs.aws.amazon.com/redshift/latest/mgmt/logging-with-cloudtrail.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "024196225137",
+        "owner": "DuckbillGroup",
+        "source": [
+            "https://www.lastweekinaws.com/blog/are-aws-account-ids-sensitive-information/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "008923505280",
+        "owner": "Grafana",
+        "source": [
+            "https://grafana.com/docs/grafana-cloud/integrations/integrations/integration-cloudwatch/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "976280145156",
+        "owner": "Orca Security",
+        "source": [
+            "https://orcasecurity.force.com/s/article/Orca-Scanner-Accounts-for-AWS-Trusted-Entities?topic=Onboarding&subtopic=AWS&article=Orca-Scanner-Accounts-for-AWS-Trusted-Entities"
+        ],
+        "description": ""
+    },
+    {
+        "id": "727815099310",
+        "owner": "Orca Security",
+        "source": [
+            "https://orcasecurity.force.com/s/article/Orca-Scanner-Accounts-for-AWS-Trusted-Entities?topic=Onboarding&subtopic=AWS&article=Orca-Scanner-Accounts-for-AWS-Trusted-Entities"
+        ],
+        "description": ""
+    },
+    {
+        "id": "553950354547",
+        "owner": "Orca Security",
+        "source": [
+            "https://orcasecurity.force.com/s/article/Orca-Scanner-Accounts-for-AWS-Trusted-Entities?topic=Onboarding&subtopic=AWS&article=Orca-Scanner-Accounts-for-AWS-Trusted-Entities"
+        ],
+        "description": ""
+    },
+    {
+        "id": "135916806842",
+        "owner": "Orca Security",
+        "source": [
+            "https://orcasecurity.force.com/s/article/Orca-Scanner-Accounts-for-AWS-Trusted-Entities?topic=Onboarding&subtopic=AWS&article=Orca-Scanner-Accounts-for-AWS-Trusted-Entities"
+        ],
+        "description": ""
+    },
+    {
+        "id": "463932680998",
+        "owner": "Orca Security",
+        "source": [
+            "https://orcasecurity.force.com/s/article/Orca-Scanner-Accounts-for-AWS-Trusted-Entities?topic=Onboarding&subtopic=AWS&article=Orca-Scanner-Accounts-for-AWS-Trusted-Entities"
+        ],
+        "description": ""
+    },
+    {
+        "id": "784971140435",
+        "owner": "Orca Security",
+        "source": [
+            "https://orcasecurity.force.com/s/article/Orca-Scanner-Accounts-for-AWS-Trusted-Entities?topic=Onboarding&subtopic=AWS&article=Orca-Scanner-Accounts-for-AWS-Trusted-Entities"
+        ],
+        "description": ""
+    },
+    {
+        "id": "151784055945",
+        "owner": "Barracuda Networks",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "758245563457",
+        "owner": "Check Point",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "517716713836",
+        "owner": "CrowdStrike",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "292230061137",
+        "owner": "CrowdStrike",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "749430749651",
+        "owner": "CyberArk",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "365761988620",
+        "owner": "Forcepoint",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "062897671886",
+        "owner": "Sophos",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "978576646331",
+        "owner": "Vectra",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "453761072151",
+        "owner": "Turbot",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "956882708938",
+        "owner": "Sumo Logic",
+        "source": [
+            "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-partner-providers.html",
+            "https://help.sumologic.com/docs/send-data/collect-from-other-data-sources/collect-aws-lambda-logs-extension/#aws-lambda-functions-created-using-zip-files-blueprint-serverless-applications"
+        ],
+        "description": ""
+    },
+    {
+        "id": "081802104111",
+        "owner": "Ermetic",
+        "source": [
+            "https://github.com/ermetic/utilities/blob/main/AWS/ControlTower/cloudformation/ermetic-controltower.yaml"
+        ],
+        "description": ""
+    },
+    {
+        "id": "672188301118",
+        "owner": "Zesty",
+        "source": [
+            "https://github.com/zesty-co/AWS-Integration/blob/main/Zesty-Minimal-ReadOnly-IAM-Role.json"
+        ],
+        "description": ""
+    },
+    {
+        "id": "802587217904",
+        "owner": "Serverless",
+        "source": [
+            "https://www.serverless.com/framework/docs/guides/monitoring/notifications"
+        ],
+        "description": ""
+    },
+    {
+        "id": "983328018169",
+        "owner": "UiPath",
+        "source": [
+            "https://forum.uipath.com/t/how-to-configure-aws-s3-storage-bucket-log-export-configuration-for-orchestrator-service-in-automation-cloud/506448"
+        ],
+        "description": ""
+    },
+    {
+        "id": "242987662583",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "118283430703",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "144182107116",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "934957504740",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "107430051933",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "973841112453",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "965013871422",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "506403581195",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "436163563069",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "378365507264",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "383009515534",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "646602203151",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "741172661024",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "464168911255",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "476419727788",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "457615622431",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "926826061926",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "955633302743",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "430639793359",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "002991280229",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "003033775354",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "552740612889",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "030935290150",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "188461706213",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "445632894446",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "143972945659",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "129086577509",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "225965583551",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "595653072700",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "529900636122",
+        "owner": "GuardDuty Announcementsaws",
+        "source": [
+            "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_sns.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "013241004608",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "066635153087",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "151742754352",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "296578399912",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "455263428931",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "491585149902",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "558608220178",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "590381155156",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "602401143452",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "759879836304",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "800184023465",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "877085696533",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "900612956339",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "900889452093",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "918309763551",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "961992271922",
+        "owner": "EKS ECR Repositoriesaws",
+        "source": [
+            "https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html"
+        ],
+        "description": ""
+    },
+    {
+        "id": "956993596390",
+        "owner": "Vantaaws",
+        "source": [
+            "https://help.vanta.com/hc/en-us/articles/8451925240980-Connecting-Vanta-AWS-Organization"
+        ],
+        "description": ""
+    },
+    {
+        "id": "269135526815",
+        "owner": "Drataaws",
+        "source": [
+            "https://github.com/drata/terraform-aws-drata-autopilot-role/blob/f774d423a62df3a3dd03008a68c3b3d70b95be33/variables.tf#L1-L5",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "085540434294",
+        "owner": "Drataaws",
+        "source": [
+            "https://github.com/drata/terraform-aws-drata-autopilot-role/blob/f774d423a62df3a3dd03008a68c3b3d70b95be33/variables.tf#L1-L5",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "809336252980",
+        "owner": "Drataaws",
+        "source": [
+            "https://github.com/drata/terraform-aws-drata-autopilot-role/blob/f774d423a62df3a3dd03008a68c3b3d70b95be33/variables.tf#L1-L5",
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "068664126052",
+        "owner": "DoItaws",
+        "source": [
+            "https://help.doit.com/docs/flexsave/aws/standalone/required-policies"
+        ],
+        "description": ""
+    },
+    {
+        "id": "205499583182",
+        "owner": "ProsperOpsaws",
+        "source": [
+            "https://console.prosperops.com/onboarding"
+        ],
+        "description": ""
+    },
+    {
+        "id": "727378841472",
+        "owner": "nOpsaws",
+        "source": [
+            "https://help.nops.io/iam-yaml-sharesave.html#sharesave-yaml-file"
+        ],
+        "description": ""
+    },
+    {
+        "id": "826182721854",
+        "owner": "Usage AIaws",
+        "source": [
+            "https://cloudopt.usage.ai/onboard"
+        ],
+        "description": ""
+    },
+    {
+        "id": "217452466226",
+        "owner": "Mackerelaws",
+        "source": [
+            "https://mackerel.io/docs/entry/integrations/aws#:~:text=How%20to%20configure%20an%20IAM%20role"
+        ],
+        "description": ""
+    },
+    {
+        "id": "099720109477",
+        "owner": "Canonicalaws",
+        "source": [
+            "https://ubuntu.com/server/docs/cloud-images/amazon-ec2"
+        ],
+        "description": ""
+    },
+    {
+        "id": "967800896805",
+        "owner": "Archeraaws",
+        "source": [
+            "https://help.archera.ai/en/articles/5611146-what-is-the-archera-aws-account-id"
+        ],
+        "description": ""
+    },
+    {
+        "id": "202754554539",
+        "owner": "Archeraaws",
+        "source": [
+            "https://help.archera.ai/en/articles/5611146-what-is-the-archera-aws-account-id"
+        ],
+        "description": ""
+    },
+    {
+        "id": "451234325714",
+        "owner": "Flexeraaws",
+        "source": [
+            "https://github.com/flexera-public/aws-control-tower/blob/1da3eb7d96e6f31cf64fa317d77a3405ac61431f/template/flexeraOptimaAWSControlTower.yaml#L227"
+        ],
+        "description": ""
+    },
+    {
+        "id": "902542641901",
+        "owner": "Temporal Technologies, Inc.aws",
+        "source": [
+            "https://temporal-auditlogs-config.s3.us-west-2.amazonaws.com/cloudformation/iam-role-for-temporal-audit-logs.yaml"
+        ],
+        "description": ""
+    },
+    {
+        "id": "160190466495",
+        "owner": "Temporal Technologies, Inc.aws",
+        "source": [
+            "https://temporal-auditlogs-config.s3.us-west-2.amazonaws.com/cloudformation/iam-role-for-temporal-audit-logs.yaml"
+        ],
+        "description": ""
+    },
+    {
+        "id": "819232936619",
+        "owner": "Temporal Technologies, Inc.aws",
+        "source": [
+            "https://temporal-auditlogs-config.s3.us-west-2.amazonaws.com/cloudformation/iam-role-for-temporal-audit-logs.yaml"
+        ],
+        "description": ""
+    },
+    {
+        "id": "829909441867",
+        "owner": "Temporal Technologies, Inc.aws",
+        "source": [
+            "https://temporal-auditlogs-config.s3.us-west-2.amazonaws.com/cloudformation/iam-role-for-temporal-audit-logs.yaml"
+        ],
+        "description": ""
+    },
+    {
+        "id": "354116250941",
+        "owner": "Temporal Technologies, Inc.aws",
+        "source": [
+            "https://temporal-auditlogs-config.s3.us-west-2.amazonaws.com/cloudformation/iam-role-for-temporal-audit-logs.yaml"
+        ],
+        "description": ""
+    },
+    {
+        "id": "253602268883",
+        "owner": "RunRevealaws",
+        "source": [
+            "https://runreveal-public-assets.s3.us-east-2.amazonaws.com/runreveal-cloudformation.yml"
+        ],
+        "description": ""
+    },
+    {
+        "id": "536727724300",
+        "owner": "MongoDB Atlasaws",
+        "source": [
+            "https://github.com/mongodb/mongodbatlas-cloudformation-resources/blob/50e556bb4641ac6baed07a3b3b5bbf28c01d73bc/cfn-resources/datalakes/test/add-policy.json"
+        ],
+        "description": ""
+    },
+    {
+        "id": "252516302205",
+        "owner": "AWS First-Party Security Hub Productsaws",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "368434119798",
+        "owner": "AWS First-Party Security Hub Productsaws",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "592144602629",
+        "owner": "AWS First-Party Security Hub Productsaws",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "615243839755",
+        "owner": "AWS First-Party Security Hub Productsaws",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "814336688286",
+        "owner": "AWS First-Party Security Hub Productsaws",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "916309344264",
+        "owner": "AWS First-Party Security Hub Productsaws",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "005076071273",
+        "owner": "AWS First-Party Security Hub Productsaws",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "005891025715",
+        "owner": "AWS First-Party Security Hub Productsaws",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "080354740365",
+        "owner": "AWS First-Party Security Hub Productsaws",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "758058086616",
+        "owner": "AWS First-Party Security Hub Productsaws",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "381031177744",
+        "owner": "AttackIQ",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "631402103377",
+        "owner": "Caveonix",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "015990171708",
+        "owner": "Claroty",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "820923007224",
+        "owner": "Claroty",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "883241448326",
+        "owner": "Claroty",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "490991382221",
+        "owner": "Contrast Security",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "763284681916",
+        "owner": "Contrast Security",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "013944500484",
+        "owner": "DisruptOps, Inc.",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "264756907367",
+        "owner": "FireEye",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "324264561773",
+        "owner": "Guardicore",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "949680696695",
+        "owner": "IBM",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "297986523463",
+        "owner": "McAfee",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "091741439927",
+        "owner": "NETSCOUT",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "585459848136",
+        "owner": "SecureCloudDB",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "842447150064",
+        "owner": "ServiceNow",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "112543817624",
+        "owner": "Splunk",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "044642040396",
+        "owner": "Plerion",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "173985203412",
+        "owner": "Plerion",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "588158338731",
+        "owner": "Plerion",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "736689547456",
+        "owner": "Plerion",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "213217834095",
+        "owner": "Sonrai Security",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "380873608913",
+        "owner": "Sonrai Security",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    },
+    {
+        "id": "717025312494",
+        "owner": "Sonrai Security",
+        "source": [
+            "https://blog.plerion.com/the-deputy-is-confused-about-aws-security-hub/"
+        ],
+        "description": ""
+    }
+]

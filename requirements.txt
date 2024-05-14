@@ -1,3 +1,4 @@
-policyuniverse==1.4.0.20210730
-boto3==1.18.19
-jinja2==3.0.1
+policyuniverse==1.5.1.20231109
+boto3==1.34.101
+jinja2==3.1.3
+pyyaml==6.0.1

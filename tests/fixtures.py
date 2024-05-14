@@ -1,8 +1,17 @@
 from collections import defaultdict
 import datetime
-
+from awsxenos.finding import Accounts, Findings, Finding
 
 class Fixtures:
+    @staticmethod
+    def mock_findings():
+        findings = Findings()
+        findings["arn:aws:iam::000000000000:role/somerole"].known_accounts.append(Finding("arn:aws:iam::999999999991:role/known",False))
+        findings["arn:aws:iam::000000000001:role/somerole"].unknown_accounts.append(Finding("arn:aws:iam::999999999992:role/unknown",False))
+        findings["arn:aws:iam::000000000002:role/somerole"].org_accounts.append(Finding("arn:aws:iam::999999999993:role/org",False))
+        findings["arn:aws:iam::000000000000:role/service-role/somerole"].aws_services.append(Finding("logging.s3.amazonaws.com",False))
+        return findings
+        
     @staticmethod
     def mock_get_roles():
         roles = defaultdict(str)
