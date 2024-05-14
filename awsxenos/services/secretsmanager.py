@@ -26,6 +26,8 @@ class SecretsManager(Service):
         paginator = sm.get_paginator("list_secrets")
         sm_iterator = paginator.paginate()
         for sm_resp in sm_iterator:
+            if "SecretList" not in sm_resp:
+                continue
             for secret in sm_resp["SecretList"]:
                 secrets[secret["ARN"]] = json.loads(sm.get_resource_policy(SecretId=secret["ARN"])["ResourcePolicy"])
 

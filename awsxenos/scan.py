@@ -119,8 +119,8 @@ def load_and_run(config_file, accounts) -> Findings:
                 results.update(future.result())
             except Exception as e:
                 # TODO: Better handling, add logger
-                print(e)
-                results[name] = str(e)  # Store the exception if the function call fails
+                print(f"Failed at {name} with: {e}")
+                # results[name] = str(e)  # Store the exception if the function call fails
     return results
 
 

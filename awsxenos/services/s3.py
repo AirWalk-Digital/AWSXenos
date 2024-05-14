@@ -144,6 +144,8 @@ class S3Glacier(Service):
         paginator = glacier.get_paginator("list_vaults")
         glacier_iterator = paginator.paginate()
         for glacier_resp in glacier_iterator:
+            if "VaultList" not in glacier_resp:
+                continue
             for vault in glacier_resp["VaultList"]:
                 vaults[vault["VaultARN"]] = json.loads(
                     glacier.get_vault_access_policy(vaultName=vault["VaultName"])["policy"]["Policy"]
