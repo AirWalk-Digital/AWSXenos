@@ -31,6 +31,15 @@ class PreScan:
         self._buckets = self.list_account_buckets()
         self.accounts = self.get_all_accounts()
 
+    def get_org_id(self):
+        orgs = boto3.client("organizations")
+        try:
+            return orgs.describe_organization()["Organization"]["Id"]
+        except:
+            print("[!] - Failed to get organization ID")
+            print(e)
+        return "o-xxxxxxxxxx"
+
     def get_org_accounts(self) -> Resources:
         """Get Account Ids from the AWS Organization
 
@@ -62,6 +71,7 @@ class PreScan:
             DefaultDict[str, Set]: Key of account type. Value account ids
         """
         accounts = Accounts()
+        accounts.org_id = self.get_org_id()
 
         with open(f"{package_path.resolve().parent}/accounts.json", "r") as f:
             accounts_file = json.load(f)

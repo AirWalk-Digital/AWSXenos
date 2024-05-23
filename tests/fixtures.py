@@ -95,7 +95,7 @@ class Fixtures:
                     "Path": "/",
                     "RoleName": "ExternalUserWithinOrg",
                     "RoleId": "AROA02I634LQK4QC3IIWF",
-                    "Arn": "arn:aws:iam::000000000000:user/ExternalUserWithinOrg",
+                    "Arn": "arn:aws:iam::000000000000:user/ExternalUserWithinOrgButOrgIdCondition",
                     "CreateDate": datetime.datetime(2021, 4, 8, 14, 1, 34),
                     "AssumeRolePolicyDocument": {
                         "Version": "2012-10-17",
@@ -105,6 +105,24 @@ class Fixtures:
                                 "Principal": {"AWS" : "arn:aws:iam::000000000002:root"},
                                 "Action": "sts:AssumeRoleWithSAML",
                                 "Condition": {"StringEquals": {"aws:PrincipalOrgID": "o-290nd8mdls"}},
+                            }
+                        ],
+                    },
+                    "MaxSessionDuration": 3600,
+                },
+                                {
+                    "Path": "/",
+                    "RoleName": "ExternalUserWithinOrg",
+                    "RoleId": "AROA02I634LQK4QC3IIWF",
+                    "Arn": "arn:aws:iam::000000000000:user/ExternalUserWithinOrg",
+                    "CreateDate": datetime.datetime(2021, 4, 8, 14, 1, 34),
+                    "AssumeRolePolicyDocument": {
+                        "Version": "2012-10-17",
+                        "Statement": [
+                            {
+                                "Effect": "Allow",
+                                "Principal": {"AWS" : "arn:aws:iam::000000000002:root"},
+                                "Action": "sts:AssumeRoleWithSAML"
                             }
                         ],
                     },
@@ -136,7 +154,8 @@ class Fixtures:
 
     @staticmethod
     def mock_get_accounts():
-        accounts = defaultdict(set)
+        #accounts = defaultdict(set)
+        accounts = Accounts()
         boto_list_orgs = {
             "Accounts": [
                 {
@@ -159,19 +178,20 @@ class Fixtures:
                 },
             ]
         }
-        accounts["org_accounts"] = set([account["Id"] for account in boto_list_orgs["Accounts"]])
-        accounts["org_accounts"].add("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-        accounts["known_accounts"] = set(["000000000001"])
+        accounts.org_accounts = set([account["Id"] for account in boto_list_orgs["Accounts"]]) # type: ignore
+        accounts.org_accounts.add("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+        accounts.known_accounts = set(["000000000001"]) # type: ignore
+        accounts.org_id = "o-xxxxxxxx" # type: ignore
         return accounts
 
     @staticmethod
     def mock_list_s3_buckets():
         return {
             "Buckets": [
-                {"Name": "examplebucket", "CreationDate": datetime.datetime(2021, 3, 29, 20, 17, 11)},
-                {"Name": "anotherexample", "CreationDate": datetime.datetime(2021, 5, 11, 8, 58, 53)},
+                {"Name": "examplebucketwithpolicy", "CreationDate": datetime.datetime(2021, 3, 29, 20, 17, 11)},
+                {"Name": "examplebucketexternalaccount", "CreationDate": datetime.datetime(2021, 5, 11, 8, 58, 53)},
                 {
-                    "Name": "aws-athena-query-results-examplebucket",
+                    "Name": "examplebucketsameaccount",
                     "CreationDate": datetime.datetime(2021, 8, 10, 10, 12, 28),
                 },
             ],
@@ -197,11 +217,21 @@ class Fixtures:
     @staticmethod
     def mock_get_bucket_acl():
         return {
-            "arn:aws:s3:::examplebucket": [
+            "arn:aws:s3:::examplebucketexternalaccount": [
                 {
                     "Grantee": {
                         "DisplayName": "exampleexternalaccount",
                         "ID": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+                        "Type": "CanonicalUser",
+                    },
+                    "Permission": "FULL_CONTROL",
+                }
+            ],
+                "arn:aws:s3:::examplebucketsameaccount": [
+                {
+                    "Grantee": {
+                        "DisplayName": "examplesameaccount",
+                        "ID": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                         "Type": "CanonicalUser",
                     },
                     "Permission": "FULL_CONTROL",

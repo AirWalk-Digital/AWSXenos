@@ -52,24 +52,24 @@ Comparison based on AWS Documentation [1](https://docs.aws.amazon.com/IAM/latest
 | RDS Cluster Snapshots | :x: |  :white_check_mark: |
 | ECR | :x: |  :white_check_mark: |
 | EFS | :white_check_mark: |  :white_check_mark: |
-| DynamoDB streams | :x: |  :white_check_mark: |
-| DynamoDB tables | :x: |  :white_check_mark: |
+| DynamoDB streams |  :white_check_mark: |  :white_check_mark: |
+| DynamoDB tables |  :white_check_mark: |  :white_check_mark: |
 | EBS Snapshots | :x: |  :white_check_mark: |
 | EventBridge | :white_check_mark: | :x: |
 | EventBridge Schema | :x: | :x: |
 | Mediastore | :x: | :x: |
 | Glue | :x: | :x: |
-| Kinesis Data Streams | :x: | :x: |
+| Kinesis Data Streams | :white_check_mark: | :x: |
 | Lex v2 | :x: | :x: |
 | Migration Hub Orchestrator | :x: | :x: |
-| OpenSearch | :x: | :x: |
+| OpenSearch | :white_check_mark: | :x: |
 | AWS PCA | :x: | :x: |
 | Redshift Serverless | :x: | :x: |
 | Serverless Application Repository | :x: | :x: |
 | SES v2 | :x: | :x: |
 | Incident Manager | :x: | :x: |
 | Incident Manager Contacts | :x: | :x: |
-| VPC endpoints | :x: | :x: |
+| VPC endpoints | :white_check_mark: | :x: |
 
 ## How to run
 
@@ -110,7 +110,7 @@ html_summary = r.HTML_report()
 
 ### IAM Permissions
 
-Permissions required.
+Permissions required to scan all services.
 
 ```json
 {
@@ -118,13 +118,22 @@ Permissions required.
   "Statement": [
     {
       "Action": [
+        "dynamodb:GetResourcePolicy",
+        "dynamodb:ListStreams",
+        "dynamodb:ListTables",
+        "ec2:DescribeVpcEndpoints",
         "elasticfilesystem:DescribeFileSystemPolicy",
         "elasticfilesystem:DescribeFileSystems",
+        "es:DescribeDomains",
+        "es:ListDomainNames",
         "events:ListEventBuses",
         "glacier:GetVaultAccessPolicy",
         "glacier:ListVaults",
         "iam:ListRoles",
+        "organizations:DescribeOrganization",
         "organizations:ListAccounts",
+        "kinesis:GetResourcePolicy",
+        "kinesis:ListStreams",
         "kms:GetKeyPolicy",
         "kms:ListKeys",
         "lambda:GetPolicy",
@@ -161,7 +170,7 @@ Example:
 ```python
 class S3(Service):
 
-    def fetch(self, accounts: DefaultDict[str, Set] ) -> Findings:
+    def fetch(self, accounts: Accounts ) -> Findings:
         self._buckets = self.list_account_buckets()
         self.policies = self.get_bucket_policies()
         return super().collate(accounts, self.policies)

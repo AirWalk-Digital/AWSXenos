@@ -19,3 +19,11 @@ plugins:
     class: SQS
   - module: efs
     class: EFSResource
+  - module: kinesis
+    class: Kinesis
+  - module: dynamodb
+    class: DynamoDBTable
+  - module: dynamodb
+    class: DynamoDBStreams
+  - module: vpc
+    class: VPCEndpoint

@@ -1,17 +1,16 @@
 import json
-from typing import DefaultDict, Set
 
 import boto3  # type: ignore
 from botocore.exceptions import ClientError  # type: ignore
 
-from awsxenos.finding import Findings, Resources, Service
+from awsxenos.finding import Accounts, Findings, Resources, Service
 
 """Lambda Resource Policies"""
 
 
 class LambdaResource(Service):
 
-    def fetch(self, accounts: DefaultDict[str, Set]) -> Findings:  # type: ignore
+    def fetch(self, accounts: Accounts) -> Findings:  # type: ignore
         return super().collate(accounts, self.get_lambda_policies())
 
     def get_lambda_policies(self) -> Resources:

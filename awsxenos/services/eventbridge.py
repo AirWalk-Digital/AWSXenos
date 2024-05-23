@@ -1,16 +1,15 @@
 import json
-from typing import DefaultDict, Set
 
 import boto3  # type: ignore
 
-from awsxenos.finding import Findings, Resources, Service
+from awsxenos.finding import Accounts, Findings, Resources, Service
 
 """EventBridge Bus Resource Policies"""
 
 
 class EventBus(Service):
 
-    def fetch(self, accounts: DefaultDict[str, Set]) -> Findings:  # type: ignore
+    def fetch(self, accounts: Accounts) -> Findings:  # type: ignore
         return super().collate(accounts, self.get_eb_policies())
 
     def get_eb_policies(self) -> Resources:
