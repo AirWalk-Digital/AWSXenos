@@ -3,6 +3,7 @@ import argparse
 import concurrent.futures
 import importlib
 import json
+import logging
 import sys
 
 from typing import Any, Callable, Dict
@@ -23,6 +24,12 @@ High level architecture
 3. Each fetch will return `Findings` by running `collate` or `custom_collate`
 4. Pass the findings to `Report`
 """
+logging.basicConfig(
+    format="%(asctime)s, %(msecs)d %(name)s %(levelname)s - %(filename)s:%(lineno)d - %(message)s",
+    level=logging.INFO,
+    filename="awsxenos.log",
+)
+logger = logging.getLogger("awsxenos")
 
 
 class PreScan:
@@ -30,6 +37,15 @@ class PreScan:
         self.known_accounts = Resources()
         self._buckets = self.list_account_buckets()
         self.accounts = self.get_all_accounts()
+
+    def get_org_id(self):
+        orgs = boto3.client("organizations")
+        try:
+            return orgs.describe_organization()["Organization"]["Id"]
+        except:
+            logger.error("[!] - Failed to get organization ID")
+            logger.error(e)
+        return "o-xxxxxxxxxx"
 
     def get_org_accounts(self) -> Resources:
         """Get Account Ids from the AWS Organization
@@ -47,8 +63,8 @@ class PreScan:
                     accounts[account["Id"]] = account
             return accounts
         except Exception as e:
-            print("[!] - Failed to get organization accounts")
-            print(e)
+            logger.error("[!] - Failed to get organization accounts")
+            logger.error(e)
         return accounts
 
     def list_account_buckets(self) -> Dict[str, Dict[Any, Any]]:
@@ -62,6 +78,7 @@ class PreScan:
             DefaultDict[str, Set]: Key of account type. Value account ids
         """
         accounts = Accounts()
+        accounts.org_id = self.get_org_id()
 
         with open(f"{package_path.resolve().parent}/accounts.json", "r") as f:
             accounts_file = json.load(f)
@@ -118,9 +135,7 @@ def load_and_run(config_file, accounts) -> Findings:
             try:
                 results.update(future.result())
             except Exception as e:
-                # TODO: Better handling, add logger
-                print(f"Failed at {name} with: {e}")
-                # results[name] = str(e)  # Store the exception if the function call fails
+                logger.error(f"Failed at {name} with: {e}")
     return results
 
 

@@ -1,16 +1,15 @@
 import json
-from typing import DefaultDict, Set
 
 import boto3  # type: ignore
 
-from awsxenos.finding import Findings, Resources, Service
+from awsxenos.finding import Accounts, Findings, Resources, Service
 
 """Secrets Manager Secrets Resource Policies"""
 
 
 class SecretsManager(Service):
 
-    def fetch(self, accounts: DefaultDict[str, Set]) -> Findings:  # type: ignore
+    def fetch(self, accounts: Accounts) -> Findings:  # type: ignore
         return super().collate(accounts, self.get_secret_policies())
 
     def get_secret_policies(self) -> Resources:
@@ -29,6 +28,21 @@ class SecretsManager(Service):
             if "SecretList" not in sm_resp:
                 continue
             for secret in sm_resp["SecretList"]:
-                secrets[secret["ARN"]] = json.loads(sm.get_resource_policy(SecretId=secret["ARN"])["ResourcePolicy"])
-
+                try:
+                    secrets[secret["ARN"]] = json.loads(
+                        sm.get_resource_policy(SecretId=secret["ARN"])["ResourcePolicy"]
+                    )
+                except Exception as err:
+                    secrets[secret["ARN"]] = {
+                        "Version": "2012-10-17",
+                        "Statement": [
+                            {
+                                "Sid": "Exception",
+                                "Effect": "Allow",
+                                "Principal": {"AWS": "*"},
+                                "Action": ["secretsmanager:*"],
+                                "Resource": "*",
+                            }
+                        ],
+                    }
         return secrets

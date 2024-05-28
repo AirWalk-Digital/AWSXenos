@@ -4,41 +4,41 @@ import boto3  # type: ignore
 
 from awsxenos.finding import Accounts, Findings, Resources, Service
 
-"""SQS Access/Resource Policy"""
+"""SNS Access/Resource Policy"""
 
 
-class SQS(Service):
+class SNS(Service):
 
     def fetch(  # type: ignore
         self,
         accounts: Accounts,
     ) -> Findings:
-        return super().collate(accounts, self.get_sqs_policies())
+        return super().collate(accounts, self.get_sns_policies())
 
-    def get_sqs_policies(self) -> Resources:
-        queues = Resources()
-        sqs = boto3.client("sqs")
-        paginator = sqs.get_paginator("list_queues")
-        for sqs_resp in paginator.paginate():
-            if "QueueUrls" not in sqs_resp:
+    def get_sns_policies(self) -> Resources:
+        topics = Resources()
+        sns = boto3.client("sns")
+        paginator = sns.get_paginator("list_topics")
+        for sns_resp in paginator.paginate():
+            if "Topics" not in sns_resp:
                 continue
-            for queue in sqs_resp["QueueUrls"]:
+            for topic in sns_resp["Topics"]:
                 try:
-                    queues[queue] = json.loads(
-                        sqs.get_queue_attributes(QueueUrl=queue, AttributeNames=["Policy"])["Attributes"]["Policy"]
+                    topics[topic["TopicArn"]] = json.loads(
+                        sns.get_topic_attributes(TopicArn=topic["TopicArn"])["Attributes"]["Policy"]
                     )
                 except Exception as err:
-                    queues[queue] = {
+                    topics[topic] = {
                         "Version": "2012-10-17",
                         "Statement": [
                             {
                                 "Sid": f"{err}",
                                 "Effect": "Allow",
                                 "Principal": {"AWS": ["arn:aws:iam::111122223333:root"]},
-                                "Action": ["sqs:*"],
+                                "Action": ["sns:*"],
                                 "Resource": "*",
                             }
                         ],
                     }
 
-        return queues
+        return topics

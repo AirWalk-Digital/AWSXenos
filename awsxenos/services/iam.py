@@ -1,8 +1,8 @@
-from typing import DefaultDict, Optional, Set
+from typing import Optional
 
 import boto3  # type: ignore
 
-from awsxenos.finding import Findings, Resources, Service
+from awsxenos.finding import Accounts, Findings, Resources, Service
 
 """IAM Roles trust policies"""
 
@@ -11,7 +11,7 @@ class IAM(Service):
 
     def fetch(  # type: ignore
         self,
-        accounts: DefaultDict[str, Set],
+        accounts: Accounts,
         exclude_service: Optional[bool] = True,
         exclude_aws: Optional[bool] = True,
     ) -> Findings:
