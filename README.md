@@ -182,11 +182,6 @@ class S3(Service):
 
 ---
 
-:warning: AWSXenos currently assesses access based on [https://github.com/Netflix-Skunkworks/policyuniverse](https://github.com/Netflix-Skunkworks/policyuniverse).
-There are cases where IAM `conditions`, will _not_ be taken into account, therefore resulting in false positives. 
-This could be fairly common in KMS Customer Managed Keys created by AWS Services.
-AWSXenos findings are per IAM statement on an IAM policy.
-
 ## FAQ
 
 ### Are there false positives?
@@ -198,6 +193,8 @@ No. AWSXenos only takes into account resource and IAM trust policies. Maybe in t
 ### Why not use [CheckAccessNotGranted](https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CheckAccessNotGranted.html) ?
 We don't know the set of accounts that shouldn't access the resource or role.
 
+### How does it work ?
+AWSXenos currently assesses access based on [https://github.com/Netflix-Skunkworks/policyuniverse](https://github.com/Netflix-Skunkworks/policyuniverse).
 
 ## Features
 - [x] Use as library
