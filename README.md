@@ -30,6 +30,7 @@ Access Analyzer falls short because:
 
 4. Does not identify AWS Service principals. This is mainly important because of [Wiz's AWSConfig, et al vulnverabilities](http://i.blackhat.com/USA21/Wednesday-Handouts/us-21-Breaking-The-Isolation-Cross-Account-AWS-Vulnerabilities.pdf)
 
+
 ## AWS IAM Access Analyzer comparison 
 
 Comparison based on AWS Documentation [1](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html) and [2](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html#what-is-access-analyzer-resource-identification), including services or resources outside of docs, e.g. VPC endpoints.
@@ -46,7 +47,7 @@ Comparison based on AWS Documentation [1](https://docs.aws.amazon.com/IAM/latest
 | KMS |  :white_check_mark: |  :white_check_mark: |
 | Secrets Manager |  :white_check_mark: |  :white_check_mark: |
 | Lambda | :white_check_mark: |  :white_check_mark: |
-| SNS | :x: |  :white_check_mark: |
+| SNS | :white_check_mark: |  :white_check_mark: |
 | SQS | :white_check_mark: |  :white_check_mark: |
 | RDS Snapshots | :x: |  :white_check_mark: |
 | RDS Cluster Snapshots | :x: |  :white_check_mark: |
@@ -130,19 +131,21 @@ Permissions required to scan all services.
         "glacier:GetVaultAccessPolicy",
         "glacier:ListVaults",
         "iam:ListRoles",
-        "organizations:DescribeOrganization",
-        "organizations:ListAccounts",
         "kinesis:GetResourcePolicy",
-        "kinesis:ListStreams",
+        "kinesis:ListStreams", 
         "kms:GetKeyPolicy",
         "kms:ListKeys",
         "lambda:GetPolicy",
         "lambda:ListFunctions",
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts",
         "s3:GetBucketAcl",
         "s3:GetBucketPolicy",
         "s3:ListAllMyBuckets",
         "secretsmanager:GetResourcePolicy",
         "secretsmanager:ListSecrets",
+        "sns:GetTopicAttributes",
+        "sns:ListTopics",
         "sqs:GetQueueAttributes",
         "sqs:ListQueues"
       ],
@@ -184,11 +187,19 @@ There are cases where IAM `conditions`, will _not_ be taken into account, theref
 This could be fairly common in KMS Customer Managed Keys created by AWS Services.
 AWSXenos findings are per IAM statement on an IAM policy.
 
-## I want to add more known accounts
-Create a PR or raise an issue. Contributions are welcome.
+## FAQ
 
+### Are there false positives?
+Yes. AWSXenos doesn't take into consideration Identity or SCP. It assumes that everything else other than the resource or trust policy _has_ access. 
+
+### Is this using an SMT Solver or automated reasoning ?
+No. AWSXenos only takes into account resource and IAM trust policies. Maybe in the next project or iteration.
+
+### Why not use [CheckAccessNotGranted](https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CheckAccessNotGranted.html) ?
+We don't know the set of accounts that shouldn't access the resource or role.
 
 
 ## Features
 - [x] Use as library
 - [x] HTML and JSON output 
+- [x] Multi-threaded querying of each service 

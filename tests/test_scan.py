@@ -43,5 +43,4 @@ class ServiceTests(unittest.TestCase):
     
     def test_collate_buckets_acl(self):
         findings =  self.s3acl.custom_collate(self.accounts, self.buckets_acl) # type: ignore
-        print(findings)
         self.assertTrue(findings["arn:aws:s3:::examplebucketexternalaccount"].unknown_accounts)

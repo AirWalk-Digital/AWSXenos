@@ -1,29 +1,33 @@
 plugins:
+  - module: dynamodb
+    class: DynamoDBTable
+  - module: dynamodb
+    class: DynamoDBStreams
+  - module: efs
+    class: EFSResource
+  - module: eventbridge
+    class: EventBus
+  - module: iam
+    class: IAM
+  - module: kinesis
+    class: Kinesis
+  - module: kms
+    class: KMS
+  - module: lambda
+    class: LambdaResource
+  - module: opensearch
+    class: OpenSearch
   - module: s3
     class: S3
   - module: s3
     class: S3ACL
   - module: s3
     class: S3Glacier
-  - module: iam
-    class: IAM
-  - module: kms
-    class: KMS
   - module: secretsmanager
     class: SecretsManager
-  - module: eventbridge
-    class: EventBus
-  - module: lambda
-    class: LambdaResource
+  - module: sns
+    class: SNS
   - module: sqs
     class: SQS
-  - module: efs
-    class: EFSResource
-  - module: kinesis
-    class: Kinesis
-  - module: dynamodb
-    class: DynamoDBTable
-  - module: dynamodb
-    class: DynamoDBStreams
   - module: vpc
     class: VPCEndpoint

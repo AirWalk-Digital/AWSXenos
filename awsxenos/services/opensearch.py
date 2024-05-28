@@ -19,11 +19,10 @@ class OpenSearch(Service):
         """
         domains = Resources()
         opens = boto3.client("opensearch")
-        for domain_name in opens.list_domain_names["DomainNames"]:
+        for domain_name in opens.list_domain_names()["DomainNames"]:
             try:
-                domains[domain_name["DomainName"]] = json.loads(
-                    opens.describe_domain(DomainName=domain_name["DomainName"])["DomainStatus"]["AccessPolicies"]
-                )
+                domain_details = opens.describe_domain(DomainName=domain_name["DomainName"])["DomainStatus"]
+                domains[domain_details["ARN"]] = json.loads(domain_details["AccessPolicies"])
             except Exception as err:
                 domains[domain_name["DomainName"]] = {
                     "Version": "2012-10-17",

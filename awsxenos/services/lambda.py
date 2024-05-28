@@ -25,17 +25,22 @@ class LambdaResource(Service):
                     lambdas[func["FunctionArn"]] = json.loads(
                         lam.get_policy(FunctionName=func["FunctionName"])["Policy"]
                     )
+
                 except ClientError as err:
-                    lambdas[func["FunctionArn"]] = {
-                        "Version": "2012-10-17",
-                        "Statement": [
-                            {
-                                "Sid": f"{err}",
-                                "Effect": "Allow",
-                                "Principal": {"AWS": ["arn:aws:iam::111122223333:root"]},
-                                "Action": ["lambda:*"],
-                                "Resource": f'{func["FunctionArn"]}',
-                            }
-                        ],
-                    }
+                    if err.response["Error"]["Code"] == "ResourceNotFoundException":
+                        continue  # empty policy
+                    else:
+                        lambdas[func["FunctionArn"]] = {
+                            "Version": "2012-10-17",
+                            "Statement": [
+                                {
+                                    "Sid": f"{err}",
+                                    "Effect": "Allow",
+                                    "Principal": {"AWS": ["arn:aws:iam::111122223333:root"]},
+                                    "Action": ["lambda:*"],
+                                    "Resource": f'{func["FunctionArn"]}',
+                                }
+                            ],
+                        }
+
         return lambdas
